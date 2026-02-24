@@ -617,11 +617,26 @@
 
       const labelX = cx + (ann.labelSide === 'left' ? -10 : 10);
       const anchor = ann.labelSide === 'left' ? 'end' : 'start';
+      const labelY = cy + (ann.labelDy || -10);
 
+      // White halo behind text for legibility over lines
       plotArea.append('text')
         .attr('class', 'annotation-text')
         .attr('x', labelX)
-        .attr('y', cy + (ann.labelDy || -10))
+        .attr('y', labelY)
+        .attr('text-anchor', anchor)
+        .attr('stroke', 'white')
+        .attr('stroke-width', 4)
+        .attr('stroke-linejoin', 'round')
+        .attr('fill', 'white')
+        .attr('paint-order', 'stroke')
+        .text(ann.label);
+
+      // Coloured text on top
+      plotArea.append('text')
+        .attr('class', 'annotation-text')
+        .attr('x', labelX)
+        .attr('y', labelY)
         .attr('text-anchor', anchor)
         .attr('fill', RAW_COLORS[ann.scenario])
         .text(ann.label);
