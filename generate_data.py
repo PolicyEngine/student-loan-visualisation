@@ -19,8 +19,9 @@ Economic assumptions: OBR November 2025 Economic and Fiscal Outlook.
 import json
 
 # Current Plan 2 parameters (2026-27)
-# Threshold rises to £29,385 in April 2026, then frozen for 3 years
+# Threshold rises to £29,385 in April 2026, then frozen for 3 years (2027-30)
 CURRENT_THRESHOLD = 29_385
+FREEZE_YEARS = 3  # frozen for 2027-28, 2028-29, 2029-30
 REPAYMENT_RATE = 0.09
 MAX_INTEREST_MARGIN = 0.03  # up to 3% above RPI
 UPPER_INCOME_FOR_INTEREST = 51_245  # 2026-27 value
@@ -77,17 +78,26 @@ def interest_rate(
 def get_threshold_schedule(mode: str) -> dict:
     """Return a year-by-year threshold schedule.
 
+    Year 0 = 2026-27 (threshold at £29,385).
+    The Autumn Budget 2025 froze the threshold for 3 years from 2027-28,
+    so years 1-3 are frozen, and uprating resumes from year 4 (2030-31).
+
     mode:
-      'frozen' - frozen at £29,385 (current policy from Autumn Budget 2025)
-      'uprated' - uprated with OBR earnings growth each year (cancel the freeze)
+      'frozen' - frozen for 3 years then uprated (current policy)
+      'uprated' - uprated with OBR earnings growth every year (cancel the freeze)
     """
     thresholds = {}
     t = CURRENT_THRESHOLD
     for year in range(LOAN_TERM_YEARS):
         thresholds[year] = t
         if mode == "uprated":
+            # Cancel the freeze: uprate every year
             t *= 1 + get_earnings_growth(year)
-        # 'frozen' keeps t at CURRENT_THRESHOLD forever
+        elif mode == "frozen":
+            # Baseline: freeze for years 1-3, then resume uprating
+            if year >= FREEZE_YEARS:
+                t *= 1 + get_earnings_growth(year)
+            # else: t stays the same (frozen)
     return thresholds
 
 

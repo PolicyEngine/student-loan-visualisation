@@ -125,6 +125,15 @@
     font-style: italic;
   }
 
+  ul.prose {
+    padding-left: 24px;
+    margin-bottom: 16px;
+  }
+
+  ul.prose li {
+    margin-bottom: 8px;
+  }
+
   /* Chart */
   .chart-section {
     margin: 32px 0;
@@ -463,7 +472,7 @@
     <div class="byline">PolicyEngine &middot; February 2026</div>
   </div>
 
-  <p class="prose">Under Plan 2, graduates repay 9% of income above a threshold that the Autumn Budget 2025 froze at &pound;29,385 for three years. Interest is charged at RPI plus up to 3%, scaled by income. Loans are written off after 30 years. A median graduate starting on &pound;35k repays around <strong>&pound;55,000</strong> over their lifetime &mdash; above the &pound;45,000 they originally borrowed.</p>
+  <p class="prose">Under Plan 2, graduates repay 9% of income above a threshold that the Autumn Budget 2025 froze at &pound;29,385 for three years. Interest is charged at RPI plus up to 3%, scaled by income. Loans are written off after 30 years. A median graduate starting on &pound;35k repays around <strong>&pound;29,000</strong> over their lifetime, with the remaining balance written off after 30 years.</p>
 
   <p class="prose">We compare two reforms, each with a policy precedent. <strong style="color: var(--series-1)">Cancelling the threshold freeze</strong> would uprate the repayment threshold with earnings growth each year, reaching around &pound;33,000 by 2031. <strong style="color: var(--series-2)">Capping interest at RPI + 1%</strong> would reduce the maximum interest margin from 3% to 1% above RPI &mdash; analogous to the CPI + 1% formula used for social housing rents.</p>
 
@@ -503,11 +512,12 @@
     </div>
   </div>
 
-  <p class="prose"><strong>The two reforms have opposite distributional profiles.</strong> For a median earner (&pound;27k, 5th decile), cancelling the threshold freeze eliminates repayment entirely &mdash; from &pound;957/yr and &pound;24,888 total under the current system to nothing. But for a 90th-percentile earner (&pound;58k, 9th decile), the same reform increases total repayment from &pound;80,249 to &pound;91,029, stretching the duration from 21 to 27 years at &pound;3,371/yr, because the higher threshold delays repayment and lets interest compound.</p>
-
-  <p class="prose">The interest rate cap has the reverse effect. A median earner sees no change &mdash; they still repay &pound;957/yr, &pound;24,888 total, with the remainder written off. But a 90th-percentile earner saves &pound;17,711, repaying &pound;3,679/yr over 17 years (&pound;62,538 total) instead of &pound;3,821/yr over 21 years (&pound;80,249 total).</p>
-
-  <p class="prose">Neither reform changes outcomes for graduates at the 10th percentile (&pound;15k, 1st decile), whose income never crosses the repayment threshold and whose loans are written off in full.</p>
+  <p class="prose"><strong>The distributional effects are different. At a glance:</strong></p>
+  <ul class="prose">
+    <li><strong>&pound;15k (1st decile):</strong> under both reforms, no repayment &mdash; loans are written off in full.</li>
+    <li><strong>&pound;31k (6th decile):</strong> cancelling the freeze reduces repayments from &pound;460 per year (&pound;13,815 total) to &pound;207 per year (&pound;6,206 total), with the remainder written off in both cases. The interest cap leaves repayments unchanged.</li>
+    <li><strong>&pound;58k (9th decile):</strong> cancelling the freeze increases lifetime repayment to &pound;3,371 per year, &pound;91,029 over 27 years (vs &pound;3,560 per year, &pound;85,446 over 24 years baseline), while the interest cap reduces repayment to &pound;3,366 per year, &pound;63,951 over 19 years.</li>
+  </ul>
 
   <div class="chart-section">
     <div class="chart-wrapper" id="years-chart-wrapper">
@@ -549,7 +559,7 @@
   <div class="methodology">
     <h3>Methodology</h3>
     <p>This analysis models Plan 2 (post-2012) student loans with an average starting debt of &pound;45,000. Repayments are calculated as 9% of income above the repayment threshold (&pound;29,385 in 2026-27), with loans written off after 30 years. Interest is charged at RPI plus a margin of 0&ndash;3%, scaled linearly by income between the threshold and &pound;51,245.</p>
-    <p>The baseline reflects the Autumn Budget 2025 policy: the threshold is frozen at &pound;29,385 from 2027. The &ldquo;cancel the freeze&rdquo; scenario uprates the threshold annually with OBR earnings growth forecasts. The interest cap scenario reduces the maximum margin from 3% to 1% above RPI, analogous to the <a href="https://www.gov.uk/government/consultations/consultation-on-future-social-housing-rent-policy/future-social-housing-rent-policy">CPI + 1% formula</a> used for social housing rents.</p>
+    <p>The baseline reflects the Autumn Budget 2025 policy: the threshold is frozen at &pound;29,385 for three years (2027&ndash;2030), then resumes annual uprating. The &ldquo;cancel the freeze&rdquo; scenario uprates the threshold annually with OBR earnings growth forecasts. The interest cap scenario reduces the maximum margin from 3% to 1% above RPI, analogous to the <a href="https://www.gov.uk/government/consultations/consultation-on-future-social-housing-rent-policy/future-social-housing-rent-policy">CPI + 1% formula</a> used for social housing rents.</p>
     <p>Economic assumptions use the <a href="https://obr.uk/efo/economic-and-fiscal-outlook-november-2025/">OBR November 2025 Economic and Fiscal Outlook</a>: RPI of 3.7% in 2026-27 falling to 2.9% long-run, and nominal earnings growth of 3.2% in 2026-27 falling to 2.3% long-run.</p>
     <p>This is a simplified model &mdash; it assumes constant employment and does not account for career breaks or part-time work. All individuals are assumed to start with the same debt and grow their earnings at the OBR average rate.</p>
   </div>
@@ -768,9 +778,9 @@
 
     // Annotations on the lines
     const annotations = [
-      { scenario: 'baseline', income: 50000, label: 'Current system: £104k', labelSide: 'right', labelDy: -14 },
+      { scenario: 'baseline', income: 50000, label: 'Current system: £87k', labelSide: 'right', labelDy: -14 },
       { scenario: 'cancel_freeze', income: 35000, label: 'Cancel freeze: £22k', labelSide: 'right', labelDy: -14 },
-      { scenario: 'interest_cap_rpi_plus_1', income: 50000, label: 'RPI+1% cap: £70k', labelSide: 'right', labelDy: 18 },
+      { scenario: 'interest_cap_rpi_plus_1', income: 50000, label: 'RPI+1% cap: £75k', labelSide: 'right', labelDy: 18 },
     ];
 
     for (const ann of annotations) {
