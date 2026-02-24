@@ -408,7 +408,7 @@
   <div class="stats-row">
     <div class="stat-card">
       <div class="stat-value" style="color: var(--series-1)" id="stat-freeze"></div>
-      <div class="stat-label">Saved by cancelling the freeze for a median graduate (&pound;35k starting salary)</div>
+      <div class="stat-label">Peak saving from cancelling the freeze (at &pound;30k starting salary)</div>
     </div>
     <div class="stat-card">
       <div class="stat-value" style="color: var(--series-2)" id="stat-cap"></div>
@@ -462,14 +462,16 @@
     return `£${fmt(Math.abs(v))}`;
   };
 
-  // Populate stats
-  const freezeMedian = scenarios.cancel_freeze.data.find(d => d.income === 35000);
+  // Populate stats - peak saving for each reform
+  const freezePeak = scenarios.cancel_freeze.data.reduce((best, d) =>
+    (d.saving_vs_baseline || 0) > (best.saving_vs_baseline || 0) ? d : best
+  );
   const capPeak = scenarios.interest_cap_rpi_plus_1.data.reduce((best, d) =>
     (d.saving_vs_baseline || 0) > (best.saving_vs_baseline || 0) ? d : best
   );
 
   document.getElementById('stat-freeze').textContent =
-    `£${fmt(freezeMedian.saving_vs_baseline)}`;
+    `£${fmt(freezePeak.saving_vs_baseline)}`;
   document.getElementById('stat-cap').textContent =
     `£${fmt(capPeak.saving_vs_baseline)}`;
 
@@ -599,7 +601,7 @@
     // Annotations on the lines
     const annotations = [
       { scenario: 'baseline', income: 50000, label: 'Current system: £104k', labelSide: 'right', labelDy: -14 },
-      { scenario: 'cancel_freeze', income: 35000, label: 'Cancel freeze: £22k', labelSide: 'left', labelDy: -14 },
+      { scenario: 'cancel_freeze', income: 35000, label: 'Cancel freeze: £22k', labelSide: 'right', labelDy: -14 },
       { scenario: 'interest_cap_rpi_plus_1', income: 50000, label: 'RPI+1% cap: £70k', labelSide: 'right', labelDy: 18 },
     ];
 
