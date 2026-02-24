@@ -142,6 +142,44 @@ def simulate_repayment(
     }
 
 
+def simulate_yearly(
+    starting_income: float,
+    debt: float = AVERAGE_DEBT,
+    threshold_mode: str = "frozen",
+    max_interest_margin: float = MAX_INTEREST_MARGIN,
+    max_years: int = 40,
+) -> list:
+    """Simulate year-by-year loan repayment. Returns list of annual repayments."""
+    balance = debt
+    income = starting_income
+    thresholds = get_threshold_schedule(threshold_mode)
+    yearly = []
+
+    for year in range(max_years):
+        if year >= LOAN_TERM_YEARS or balance <= 0:
+            yearly.append({"year": year + 1, "annual_repayment": 0, "balance": 0})
+            income *= 1 + get_earnings_growth(year)
+            continue
+
+        rpi = get_rpi(year)
+        threshold = thresholds[year]
+
+        repayment = max(0, (income - threshold) * REPAYMENT_RATE)
+        repayment = min(repayment, balance)
+        balance -= repayment
+
+        rate = interest_rate(income, threshold, rpi, max_interest_margin)
+        balance *= 1 + rate
+        balance = max(0, balance)
+
+        yearly.append(
+            {"year": year + 1, "annual_repayment": repayment, "balance": balance}
+        )
+        income *= 1 + get_earnings_growth(year)
+
+    return yearly
+
+
 def generate_scenarios() -> dict:
     """Generate data for all policy scenarios across the income distribution."""
 
@@ -233,6 +271,24 @@ def generate_scenarios() -> dict:
         f"year_{y}": round(uprated_schedule[y]) for y in range(6)
     }
 
+    # Annual repayment profiles for selected salary levels
+    profile_salaries = [25_000, 35_000, 50_000, 70_000]
+    annual_profiles = {}
+    for sal in profile_salaries:
+        profiles = {}
+        for scenario_key, scenario in scenarios.items():
+            if scenario_key == "baseline":
+                continue
+            yearly = simulate_yearly(
+                starting_income=sal,
+                threshold_mode=scenario["threshold_mode"],
+                max_interest_margin=scenario["max_interest_margin"],
+            )
+            profiles[scenario_key] = [
+                round(r["annual_repayment"]) for r in yearly
+            ]
+        annual_profiles[str(sal)] = profiles
+
     output = {
         "parameters": {
             "current_threshold": CURRENT_THRESHOLD,
@@ -264,6 +320,7 @@ def generate_scenarios() -> dict:
         "threshold_schedule_if_uprated": threshold_schedule,
         "scenarios": results,
         "graduate_income_percentiles": percentiles,
+        "annual_profiles": annual_profiles,
     }
 
     return output
