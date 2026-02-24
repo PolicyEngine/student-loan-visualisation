@@ -4,7 +4,7 @@ Student loan repayment model: threshold uprating vs interest rate caps.
 Models Plan 2 (post-2012) student loans across the income distribution,
 comparing the distributional impact of:
 1. Cancelling the threshold freeze (uprate with earnings)
-2. Capping the interest rate at RPI+1% (analogous to social housing CPI+1%)
+2. Capping the interest rate at RPI (analogous to social housing CPI+1%)
 
 Key mechanics:
 - Repayment: 9% of gross income above the threshold
@@ -211,14 +211,14 @@ def generate_scenarios() -> dict:
             "threshold_mode": "uprated",
             "max_interest_margin": MAX_INTEREST_MARGIN,
         },
-        "interest_cap_rpi_plus_1": {
-            "label": "Cap interest at RPI + 1%",
+        "interest_cap_rpi": {
+            "label": "Cap interest at RPI",
             "description": (
-                "Cap the interest margin at 1% above RPI "
-                "(analogous to social housing CPI + 1% rent formula)"
+                "Cap the interest rate at RPI (0% margin), "
+                "as proposed by the Conservative Party"
             ),
             "threshold_mode": "frozen",
-            "max_interest_margin": 0.01,
+            "max_interest_margin": 0.0,
         },
     }
 
@@ -350,7 +350,7 @@ if __name__ == "__main__":
     scenarios = data["scenarios"]
     baseline = {d["income"]: d for d in scenarios["baseline"]["data"]}
     cancel = {d["income"]: d for d in scenarios["cancel_freeze"]["data"]}
-    cap = {d["income"]: d for d in scenarios["interest_cap_rpi_plus_1"]["data"]}
+    cap = {d["income"]: d for d in scenarios["interest_cap_rpi"]["data"]}
 
     for inc in [35_000, 50_000, 70_000]:
         b = baseline[inc]["total_repaid"]
@@ -360,5 +360,5 @@ if __name__ == "__main__":
             f"\n£{inc//1000}k salary: "
             f"baseline £{b:,}, "
             f"cancel freeze saves £{b - c:,}, "
-            f"RPI+1% cap saves £{b - i:,}"
+            f"RPI cap saves £{b - i:,}"
         )

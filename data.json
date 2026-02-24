@@ -1955,9 +1955,9 @@
         }
       ]
     },
-    "interest_cap_rpi_plus_1": {
-      "label": "Cap interest at RPI + 1%",
-      "description": "Cap the interest margin at 1% above RPI (analogous to social housing CPI + 1% rent formula)",
+    "interest_cap_rpi": {
+      "label": "Cap interest at RPI",
+      "description": "Cap the interest rate at RPI (0% margin), as proposed by the Conservative Party",
       "data": [
         {
           "income": 15000,
@@ -2092,7 +2092,7 @@
         {
           "income": 28000,
           "total_repaid": 2454,
-          "written_off": 109325,
+          "written_off": 102882,
           "annual_repayment_year1": 0,
           "years_repaying": 28,
           "effective_rate": 5.5,
@@ -2102,7 +2102,7 @@
         {
           "income": 29000,
           "total_repaid": 6163,
-          "written_off": 107636,
+          "written_off": 97320,
           "annual_repayment_year1": 0,
           "years_repaying": 29,
           "effective_rate": 13.7,
@@ -2112,7 +2112,7 @@
         {
           "income": 30000,
           "total_repaid": 9972,
-          "written_off": 104525,
+          "written_off": 91527,
           "annual_repayment_year1": 55,
           "years_repaying": 30,
           "effective_rate": 22.2,
@@ -2122,7 +2122,7 @@
         {
           "income": 31000,
           "total_repaid": 13815,
-          "written_off": 100683,
+          "written_off": 85652,
           "annual_repayment_year1": 145,
           "years_repaying": 30,
           "effective_rate": 30.7,
@@ -2132,7 +2132,7 @@
         {
           "income": 32000,
           "total_repaid": 17658,
-          "written_off": 96307,
+          "written_off": 79776,
           "annual_repayment_year1": 235,
           "years_repaying": 30,
           "effective_rate": 39.2,
@@ -2142,7 +2142,7 @@
         {
           "income": 33000,
           "total_repaid": 21501,
-          "written_off": 91575,
+          "written_off": 73901,
           "annual_repayment_year1": 325,
           "years_repaying": 30,
           "effective_rate": 47.8,
@@ -2152,7 +2152,7 @@
         {
           "income": 34000,
           "total_repaid": 25344,
-          "written_off": 86537,
+          "written_off": 68025,
           "annual_repayment_year1": 415,
           "years_repaying": 30,
           "effective_rate": 56.3,
@@ -2162,7 +2162,7 @@
         {
           "income": 35000,
           "total_repaid": 29187,
-          "written_off": 81244,
+          "written_off": 62150,
           "annual_repayment_year1": 505,
           "years_repaying": 30,
           "effective_rate": 64.9,
@@ -2172,7 +2172,7 @@
         {
           "income": 36000,
           "total_repaid": 33030,
-          "written_off": 75752,
+          "written_off": 56274,
           "annual_repayment_year1": 595,
           "years_repaying": 30,
           "effective_rate": 73.4,
@@ -2182,7 +2182,7 @@
         {
           "income": 37000,
           "total_repaid": 36873,
-          "written_off": 70090,
+          "written_off": 50399,
           "annual_repayment_year1": 685,
           "years_repaying": 30,
           "effective_rate": 81.9,
@@ -2192,7 +2192,7 @@
         {
           "income": 38000,
           "total_repaid": 40716,
-          "written_off": 64277,
+          "written_off": 44524,
           "annual_repayment_year1": 775,
           "years_repaying": 30,
           "effective_rate": 90.5,
@@ -2202,7 +2202,7 @@
         {
           "income": 39000,
           "total_repaid": 44559,
-          "written_off": 58325,
+          "written_off": 38648,
           "annual_repayment_year1": 865,
           "years_repaying": 30,
           "effective_rate": 99.0,
@@ -2212,7 +2212,7 @@
         {
           "income": 40000,
           "total_repaid": 48402,
-          "written_off": 52261,
+          "written_off": 32773,
           "annual_repayment_year1": 955,
           "years_repaying": 30,
           "effective_rate": 107.6,
@@ -2222,7 +2222,7 @@
         {
           "income": 41000,
           "total_repaid": 52245,
-          "written_off": 46097,
+          "written_off": 26897,
           "annual_repayment_year1": 1045,
           "years_repaying": 30,
           "effective_rate": 116.1,
@@ -2232,7 +2232,7 @@
         {
           "income": 42000,
           "total_repaid": 56088,
-          "written_off": 39842,
+          "written_off": 21022,
           "annual_repayment_year1": 1135,
           "years_repaying": 30,
           "effective_rate": 124.6,
@@ -2242,7 +2242,7 @@
         {
           "income": 43000,
           "total_repaid": 59931,
-          "written_off": 33506,
+          "written_off": 15146,
           "annual_repayment_year1": 1225,
           "years_repaying": 30,
           "effective_rate": 133.2,
@@ -2252,7 +2252,7 @@
         {
           "income": 44000,
           "total_repaid": 63774,
-          "written_off": 27094,
+          "written_off": 9271,
           "annual_repayment_year1": 1315,
           "years_repaying": 30,
           "effective_rate": 141.7,
@@ -2262,7 +2262,7 @@
         {
           "income": 45000,
           "total_repaid": 67617,
-          "written_off": 20614,
+          "written_off": 3396,
           "annual_repayment_year1": 1405,
           "years_repaying": 30,
           "effective_rate": 150.3,
@@ -2271,753 +2271,753 @@
         },
         {
           "income": 46000,
-          "total_repaid": 71460,
-          "written_off": 14070,
+          "total_repaid": 69050,
+          "written_off": 0,
           "annual_repayment_year1": 1495,
           "years_repaying": 30,
-          "effective_rate": 158.8,
-          "saving_vs_baseline": 0,
-          "saving_pct": 0.0
+          "effective_rate": 153.4,
+          "saving_vs_baseline": 2410,
+          "saving_pct": 3.4
         },
         {
           "income": 47000,
-          "total_repaid": 75303,
-          "written_off": 7466,
+          "total_repaid": 67349,
+          "written_off": 0,
           "annual_repayment_year1": 1585,
-          "years_repaying": 30,
-          "effective_rate": 167.3,
-          "saving_vs_baseline": 0,
-          "saving_pct": 0.0
-        },
-        {
-          "income": 48000,
-          "total_repaid": 79146,
-          "written_off": 804,
-          "annual_repayment_year1": 1675,
-          "years_repaying": 30,
-          "effective_rate": 175.9,
-          "saving_vs_baseline": 0,
-          "saving_pct": 0.0
-        },
-        {
-          "income": 49000,
-          "total_repaid": 77365,
-          "written_off": 0,
-          "annual_repayment_year1": 1765,
-          "years_repaying": 29,
-          "effective_rate": 171.9,
-          "saving_vs_baseline": 5624,
-          "saving_pct": 6.8
-        },
-        {
-          "income": 50000,
-          "total_repaid": 75080,
-          "written_off": 0,
-          "annual_repayment_year1": 1855,
-          "years_repaying": 27,
-          "effective_rate": 166.8,
-          "saving_vs_baseline": 11752,
-          "saving_pct": 13.5
-        },
-        {
-          "income": 51000,
-          "total_repaid": 73095,
-          "written_off": 0,
-          "annual_repayment_year1": 1945,
-          "years_repaying": 26,
-          "effective_rate": 162.4,
-          "saving_vs_baseline": 17580,
-          "saving_pct": 19.4
-        },
-        {
-          "income": 52000,
-          "total_repaid": 71309,
-          "written_off": 0,
-          "annual_repayment_year1": 2035,
-          "years_repaying": 25,
-          "effective_rate": 158.5,
-          "saving_vs_baseline": 23209,
-          "saving_pct": 24.6
-        },
-        {
-          "income": 53000,
-          "total_repaid": 69718,
-          "written_off": 0,
-          "annual_repayment_year1": 2125,
-          "years_repaying": 24,
-          "effective_rate": 154.9,
-          "saving_vs_baseline": 28643,
-          "saving_pct": 29.1
-        },
-        {
-          "income": 54000,
-          "total_repaid": 68306,
-          "written_off": 0,
-          "annual_repayment_year1": 2215,
-          "years_repaying": 23,
-          "effective_rate": 151.8,
-          "saving_vs_baseline": 32510,
-          "saving_pct": 32.2
-        },
-        {
-          "income": 55000,
-          "total_repaid": 67047,
-          "written_off": 0,
-          "annual_repayment_year1": 2305,
-          "years_repaying": 22,
-          "effective_rate": 149.0,
-          "saving_vs_baseline": 28912,
-          "saving_pct": 30.1
-        },
-        {
-          "income": 56000,
-          "total_repaid": 65917,
-          "written_off": 0,
-          "annual_repayment_year1": 2395,
-          "years_repaying": 21,
-          "effective_rate": 146.5,
-          "saving_vs_baseline": 25988,
-          "saving_pct": 28.3
-        },
-        {
-          "income": 57000,
-          "total_repaid": 64891,
-          "written_off": 0,
-          "annual_repayment_year1": 2485,
-          "years_repaying": 20,
-          "effective_rate": 144.2,
-          "saving_vs_baseline": 23531,
-          "saving_pct": 26.6
-        },
-        {
-          "income": 58000,
-          "total_repaid": 63951,
-          "written_off": 0,
-          "annual_repayment_year1": 2575,
-          "years_repaying": 19,
-          "effective_rate": 142.1,
-          "saving_vs_baseline": 21495,
-          "saving_pct": 25.2
-        },
-        {
-          "income": 59000,
-          "total_repaid": 63093,
-          "written_off": 0,
-          "annual_repayment_year1": 2665,
-          "years_repaying": 19,
-          "effective_rate": 140.2,
-          "saving_vs_baseline": 19745,
-          "saving_pct": 23.8
-        },
-        {
-          "income": 60000,
-          "total_repaid": 62325,
-          "written_off": 0,
-          "annual_repayment_year1": 2755,
-          "years_repaying": 18,
-          "effective_rate": 138.5,
-          "saving_vs_baseline": 18215,
-          "saving_pct": 22.6
-        },
-        {
-          "income": 61000,
-          "total_repaid": 61594,
-          "written_off": 0,
-          "annual_repayment_year1": 2845,
-          "years_repaying": 17,
-          "effective_rate": 136.9,
-          "saving_vs_baseline": 16909,
-          "saving_pct": 21.5
-        },
-        {
-          "income": 62000,
-          "total_repaid": 60941,
-          "written_off": 0,
-          "annual_repayment_year1": 2935,
-          "years_repaying": 17,
-          "effective_rate": 135.4,
-          "saving_vs_baseline": 15736,
-          "saving_pct": 20.5
-        },
-        {
-          "income": 63000,
-          "total_repaid": 60322,
-          "written_off": 0,
-          "annual_repayment_year1": 3025,
-          "years_repaying": 16,
-          "effective_rate": 134.0,
-          "saving_vs_baseline": 14701,
-          "saving_pct": 19.6
-        },
-        {
-          "income": 64000,
-          "total_repaid": 59758,
-          "written_off": 0,
-          "annual_repayment_year1": 3115,
-          "years_repaying": 16,
-          "effective_rate": 132.8,
-          "saving_vs_baseline": 13799,
-          "saving_pct": 18.8
-        },
-        {
-          "income": 65000,
-          "total_repaid": 59219,
-          "written_off": 0,
-          "annual_repayment_year1": 3205,
-          "years_repaying": 15,
-          "effective_rate": 131.6,
-          "saving_vs_baseline": 13008,
-          "saving_pct": 18.0
-        },
-        {
-          "income": 66000,
-          "total_repaid": 58736,
-          "written_off": 0,
-          "annual_repayment_year1": 3295,
-          "years_repaying": 15,
-          "effective_rate": 130.5,
-          "saving_vs_baseline": 12241,
-          "saving_pct": 17.2
-        },
-        {
-          "income": 67000,
-          "total_repaid": 58253,
-          "written_off": 0,
-          "annual_repayment_year1": 3385,
-          "years_repaying": 15,
-          "effective_rate": 129.5,
-          "saving_vs_baseline": 11625,
-          "saving_pct": 16.6
-        },
-        {
-          "income": 68000,
-          "total_repaid": 57838,
-          "written_off": 0,
-          "annual_repayment_year1": 3475,
-          "years_repaying": 14,
-          "effective_rate": 128.5,
-          "saving_vs_baseline": 10997,
-          "saving_pct": 16.0
-        },
-        {
-          "income": 69000,
-          "total_repaid": 57429,
-          "written_off": 0,
-          "annual_repayment_year1": 3565,
-          "years_repaying": 14,
-          "effective_rate": 127.6,
-          "saving_vs_baseline": 10464,
-          "saving_pct": 15.4
-        },
-        {
-          "income": 70000,
-          "total_repaid": 57032,
-          "written_off": 0,
-          "annual_repayment_year1": 3655,
-          "years_repaying": 13,
-          "effective_rate": 126.7,
-          "saving_vs_baseline": 9968,
-          "saving_pct": 14.9
-        },
-        {
-          "income": 71000,
-          "total_repaid": 56689,
-          "written_off": 0,
-          "annual_repayment_year1": 3745,
-          "years_repaying": 13,
-          "effective_rate": 126.0,
-          "saving_vs_baseline": 9510,
-          "saving_pct": 14.4
-        },
-        {
-          "income": 72000,
-          "total_repaid": 56346,
-          "written_off": 0,
-          "annual_repayment_year1": 3835,
-          "years_repaying": 13,
-          "effective_rate": 125.2,
-          "saving_vs_baseline": 9056,
-          "saving_pct": 13.8
-        },
-        {
-          "income": 73000,
-          "total_repaid": 56002,
-          "written_off": 0,
-          "annual_repayment_year1": 3925,
-          "years_repaying": 13,
-          "effective_rate": 124.4,
-          "saving_vs_baseline": 8726,
-          "saving_pct": 13.5
-        },
-        {
-          "income": 74000,
-          "total_repaid": 55717,
-          "written_off": 0,
-          "annual_repayment_year1": 4015,
-          "years_repaying": 12,
-          "effective_rate": 123.8,
-          "saving_vs_baseline": 8337,
-          "saving_pct": 13.0
-        },
-        {
-          "income": 75000,
-          "total_repaid": 55433,
-          "written_off": 0,
-          "annual_repayment_year1": 4105,
-          "years_repaying": 12,
-          "effective_rate": 123.2,
-          "saving_vs_baseline": 7987,
-          "saving_pct": 12.6
-        },
-        {
-          "income": 76000,
-          "total_repaid": 55149,
-          "written_off": 0,
-          "annual_repayment_year1": 4195,
-          "years_repaying": 12,
-          "effective_rate": 122.6,
-          "saving_vs_baseline": 7710,
-          "saving_pct": 12.3
-        },
-        {
-          "income": 77000,
-          "total_repaid": 54876,
-          "written_off": 0,
-          "annual_repayment_year1": 4285,
-          "years_repaying": 11,
-          "effective_rate": 121.9,
-          "saving_vs_baseline": 7421,
-          "saving_pct": 11.9
-        },
-        {
-          "income": 78000,
-          "total_repaid": 54644,
-          "written_off": 0,
-          "annual_repayment_year1": 4375,
-          "years_repaying": 11,
-          "effective_rate": 121.4,
-          "saving_vs_baseline": 7115,
-          "saving_pct": 11.5
-        },
-        {
-          "income": 79000,
-          "total_repaid": 54413,
-          "written_off": 0,
-          "annual_repayment_year1": 4465,
-          "years_repaying": 11,
-          "effective_rate": 120.9,
-          "saving_vs_baseline": 6884,
-          "saving_pct": 11.2
-        },
-        {
-          "income": 80000,
-          "total_repaid": 54182,
-          "written_off": 0,
-          "annual_repayment_year1": 4555,
-          "years_repaying": 11,
-          "effective_rate": 120.4,
-          "saving_vs_baseline": 6654,
-          "saving_pct": 10.9
-        },
-        {
-          "income": 81000,
-          "total_repaid": 53950,
-          "written_off": 0,
-          "annual_repayment_year1": 4645,
-          "years_repaying": 11,
-          "effective_rate": 119.9,
-          "saving_vs_baseline": 6425,
+          "years_repaying": 28,
+          "effective_rate": 149.7,
+          "saving_vs_baseline": 7954,
           "saving_pct": 10.6
         },
         {
+          "income": 48000,
+          "total_repaid": 65863,
+          "written_off": 0,
+          "annual_repayment_year1": 1675,
+          "years_repaying": 27,
+          "effective_rate": 146.4,
+          "saving_vs_baseline": 13283,
+          "saving_pct": 16.8
+        },
+        {
+          "income": 49000,
+          "total_repaid": 64556,
+          "written_off": 0,
+          "annual_repayment_year1": 1765,
+          "years_repaying": 25,
+          "effective_rate": 143.5,
+          "saving_vs_baseline": 18433,
+          "saving_pct": 22.2
+        },
+        {
+          "income": 50000,
+          "total_repaid": 63408,
+          "written_off": 0,
+          "annual_repayment_year1": 1855,
+          "years_repaying": 24,
+          "effective_rate": 140.9,
+          "saving_vs_baseline": 23424,
+          "saving_pct": 27.0
+        },
+        {
+          "income": 51000,
+          "total_repaid": 62381,
+          "written_off": 0,
+          "annual_repayment_year1": 1945,
+          "years_repaying": 23,
+          "effective_rate": 138.6,
+          "saving_vs_baseline": 28294,
+          "saving_pct": 31.2
+        },
+        {
+          "income": 52000,
+          "total_repaid": 61459,
+          "written_off": 0,
+          "annual_repayment_year1": 2035,
+          "years_repaying": 22,
+          "effective_rate": 136.6,
+          "saving_vs_baseline": 33059,
+          "saving_pct": 35.0
+        },
+        {
+          "income": 53000,
+          "total_repaid": 60625,
+          "written_off": 0,
+          "annual_repayment_year1": 2125,
+          "years_repaying": 21,
+          "effective_rate": 134.7,
+          "saving_vs_baseline": 37736,
+          "saving_pct": 38.4
+        },
+        {
+          "income": 54000,
+          "total_repaid": 59864,
+          "written_off": 0,
+          "annual_repayment_year1": 2215,
+          "years_repaying": 20,
+          "effective_rate": 133.0,
+          "saving_vs_baseline": 40952,
+          "saving_pct": 40.6
+        },
+        {
+          "income": 55000,
+          "total_repaid": 59185,
+          "written_off": 0,
+          "annual_repayment_year1": 2305,
+          "years_repaying": 20,
+          "effective_rate": 131.5,
+          "saving_vs_baseline": 36774,
+          "saving_pct": 38.3
+        },
+        {
+          "income": 56000,
+          "total_repaid": 58563,
+          "written_off": 0,
+          "annual_repayment_year1": 2395,
+          "years_repaying": 19,
+          "effective_rate": 130.1,
+          "saving_vs_baseline": 33342,
+          "saving_pct": 36.3
+        },
+        {
+          "income": 57000,
+          "total_repaid": 57981,
+          "written_off": 0,
+          "annual_repayment_year1": 2485,
+          "years_repaying": 18,
+          "effective_rate": 128.8,
+          "saving_vs_baseline": 30441,
+          "saving_pct": 34.4
+        },
+        {
+          "income": 58000,
+          "total_repaid": 57454,
+          "written_off": 0,
+          "annual_repayment_year1": 2575,
+          "years_repaying": 18,
+          "effective_rate": 127.7,
+          "saving_vs_baseline": 27992,
+          "saving_pct": 32.8
+        },
+        {
+          "income": 59000,
+          "total_repaid": 56967,
+          "written_off": 0,
+          "annual_repayment_year1": 2665,
+          "years_repaying": 17,
+          "effective_rate": 126.6,
+          "saving_vs_baseline": 25871,
+          "saving_pct": 31.2
+        },
+        {
+          "income": 60000,
+          "total_repaid": 56507,
+          "written_off": 0,
+          "annual_repayment_year1": 2755,
+          "years_repaying": 17,
+          "effective_rate": 125.6,
+          "saving_vs_baseline": 24033,
+          "saving_pct": 29.8
+        },
+        {
+          "income": 61000,
+          "total_repaid": 56094,
+          "written_off": 0,
+          "annual_repayment_year1": 2845,
+          "years_repaying": 16,
+          "effective_rate": 124.7,
+          "saving_vs_baseline": 22409,
+          "saving_pct": 28.5
+        },
+        {
+          "income": 62000,
+          "total_repaid": 55695,
+          "written_off": 0,
+          "annual_repayment_year1": 2935,
+          "years_repaying": 16,
+          "effective_rate": 123.8,
+          "saving_vs_baseline": 20982,
+          "saving_pct": 27.4
+        },
+        {
+          "income": 63000,
+          "total_repaid": 55334,
+          "written_off": 0,
+          "annual_repayment_year1": 3025,
+          "years_repaying": 15,
+          "effective_rate": 123.0,
+          "saving_vs_baseline": 19689,
+          "saving_pct": 26.2
+        },
+        {
+          "income": 64000,
+          "total_repaid": 54991,
+          "written_off": 0,
+          "annual_repayment_year1": 3115,
+          "years_repaying": 15,
+          "effective_rate": 122.2,
+          "saving_vs_baseline": 18566,
+          "saving_pct": 25.2
+        },
+        {
+          "income": 65000,
+          "total_repaid": 54663,
+          "written_off": 0,
+          "annual_repayment_year1": 3205,
+          "years_repaying": 14,
+          "effective_rate": 121.5,
+          "saving_vs_baseline": 17564,
+          "saving_pct": 24.3
+        },
+        {
+          "income": 66000,
+          "total_repaid": 54371,
+          "written_off": 0,
+          "annual_repayment_year1": 3295,
+          "years_repaying": 14,
+          "effective_rate": 120.8,
+          "saving_vs_baseline": 16606,
+          "saving_pct": 23.4
+        },
+        {
+          "income": 67000,
+          "total_repaid": 54079,
+          "written_off": 0,
+          "annual_repayment_year1": 3385,
+          "years_repaying": 14,
+          "effective_rate": 120.2,
+          "saving_vs_baseline": 15799,
+          "saving_pct": 22.6
+        },
+        {
+          "income": 68000,
+          "total_repaid": 53812,
+          "written_off": 0,
+          "annual_repayment_year1": 3475,
+          "years_repaying": 13,
+          "effective_rate": 119.6,
+          "saving_vs_baseline": 15023,
+          "saving_pct": 21.8
+        },
+        {
+          "income": 69000,
+          "total_repaid": 53566,
+          "written_off": 0,
+          "annual_repayment_year1": 3565,
+          "years_repaying": 13,
+          "effective_rate": 119.0,
+          "saving_vs_baseline": 14327,
+          "saving_pct": 21.1
+        },
+        {
+          "income": 70000,
+          "total_repaid": 53321,
+          "written_off": 0,
+          "annual_repayment_year1": 3655,
+          "years_repaying": 13,
+          "effective_rate": 118.5,
+          "saving_vs_baseline": 13679,
+          "saving_pct": 20.4
+        },
+        {
+          "income": 71000,
+          "total_repaid": 53088,
+          "written_off": 0,
+          "annual_repayment_year1": 3745,
+          "years_repaying": 12,
+          "effective_rate": 118.0,
+          "saving_vs_baseline": 13111,
+          "saving_pct": 19.8
+        },
+        {
+          "income": 72000,
+          "total_repaid": 52884,
+          "written_off": 0,
+          "annual_repayment_year1": 3835,
+          "years_repaying": 12,
+          "effective_rate": 117.5,
+          "saving_vs_baseline": 12518,
+          "saving_pct": 19.1
+        },
+        {
+          "income": 73000,
+          "total_repaid": 52680,
+          "written_off": 0,
+          "annual_repayment_year1": 3925,
+          "years_repaying": 12,
+          "effective_rate": 117.1,
+          "saving_vs_baseline": 12048,
+          "saving_pct": 18.6
+        },
+        {
+          "income": 74000,
+          "total_repaid": 52477,
+          "written_off": 0,
+          "annual_repayment_year1": 4015,
+          "years_repaying": 12,
+          "effective_rate": 116.6,
+          "saving_vs_baseline": 11577,
+          "saving_pct": 18.1
+        },
+        {
+          "income": 75000,
+          "total_repaid": 52291,
+          "written_off": 0,
+          "annual_repayment_year1": 4105,
+          "years_repaying": 11,
+          "effective_rate": 116.2,
+          "saving_vs_baseline": 11129,
+          "saving_pct": 17.5
+        },
+        {
+          "income": 76000,
+          "total_repaid": 52125,
+          "written_off": 0,
+          "annual_repayment_year1": 4195,
+          "years_repaying": 11,
+          "effective_rate": 115.8,
+          "saving_vs_baseline": 10734,
+          "saving_pct": 17.1
+        },
+        {
+          "income": 77000,
+          "total_repaid": 51958,
+          "written_off": 0,
+          "annual_repayment_year1": 4285,
+          "years_repaying": 11,
+          "effective_rate": 115.5,
+          "saving_vs_baseline": 10339,
+          "saving_pct": 16.6
+        },
+        {
+          "income": 78000,
+          "total_repaid": 51792,
+          "written_off": 0,
+          "annual_repayment_year1": 4375,
+          "years_repaying": 11,
+          "effective_rate": 115.1,
+          "saving_vs_baseline": 9967,
+          "saving_pct": 16.1
+        },
+        {
+          "income": 79000,
+          "total_repaid": 51625,
+          "written_off": 0,
+          "annual_repayment_year1": 4465,
+          "years_repaying": 11,
+          "effective_rate": 114.7,
+          "saving_vs_baseline": 9672,
+          "saving_pct": 15.8
+        },
+        {
+          "income": 80000,
+          "total_repaid": 51489,
+          "written_off": 0,
+          "annual_repayment_year1": 4555,
+          "years_repaying": 10,
+          "effective_rate": 114.4,
+          "saving_vs_baseline": 9347,
+          "saving_pct": 15.4
+        },
+        {
+          "income": 81000,
+          "total_repaid": 51355,
+          "written_off": 0,
+          "annual_repayment_year1": 4645,
+          "years_repaying": 10,
+          "effective_rate": 114.1,
+          "saving_vs_baseline": 9020,
+          "saving_pct": 14.9
+        },
+        {
           "income": 82000,
-          "total_repaid": 53749,
+          "total_repaid": 51222,
           "written_off": 0,
           "annual_repayment_year1": 4735,
           "years_repaying": 10,
-          "effective_rate": 119.4,
-          "saving_vs_baseline": 6210,
-          "saving_pct": 10.4
+          "effective_rate": 113.8,
+          "saving_vs_baseline": 8737,
+          "saving_pct": 14.6
         },
         {
           "income": 83000,
-          "total_repaid": 53564,
+          "total_repaid": 51088,
           "written_off": 0,
           "annual_repayment_year1": 4825,
           "years_repaying": 10,
-          "effective_rate": 119.0,
-          "saving_vs_baseline": 6021,
-          "saving_pct": 10.1
+          "effective_rate": 113.5,
+          "saving_vs_baseline": 8497,
+          "saving_pct": 14.3
         },
         {
           "income": 84000,
-          "total_repaid": 53379,
+          "total_repaid": 50955,
           "written_off": 0,
           "annual_repayment_year1": 4915,
           "years_repaying": 10,
-          "effective_rate": 118.6,
-          "saving_vs_baseline": 5833,
-          "saving_pct": 9.9
+          "effective_rate": 113.2,
+          "saving_vs_baseline": 8257,
+          "saving_pct": 13.9
         },
         {
           "income": 85000,
-          "total_repaid": 53194,
+          "total_repaid": 50830,
           "written_off": 0,
           "annual_repayment_year1": 5005,
-          "years_repaying": 10,
-          "effective_rate": 118.2,
-          "saving_vs_baseline": 5645,
-          "saving_pct": 9.6
+          "years_repaying": 9,
+          "effective_rate": 113.0,
+          "saving_vs_baseline": 8009,
+          "saving_pct": 13.6
         },
         {
           "income": 86000,
-          "total_repaid": 53009,
+          "total_repaid": 50725,
           "written_off": 0,
           "annual_repayment_year1": 5095,
-          "years_repaying": 10,
-          "effective_rate": 117.8,
-          "saving_vs_baseline": 5460,
-          "saving_pct": 9.3
+          "years_repaying": 9,
+          "effective_rate": 112.7,
+          "saving_vs_baseline": 7744,
+          "saving_pct": 13.2
         },
         {
           "income": 87000,
-          "total_repaid": 52827,
+          "total_repaid": 50621,
           "written_off": 0,
           "annual_repayment_year1": 5185,
           "years_repaying": 9,
-          "effective_rate": 117.4,
-          "saving_vs_baseline": 5346,
-          "saving_pct": 9.2
+          "effective_rate": 112.5,
+          "saving_vs_baseline": 7552,
+          "saving_pct": 13.0
         },
         {
           "income": 88000,
-          "total_repaid": 52683,
+          "total_repaid": 50516,
           "written_off": 0,
           "annual_repayment_year1": 5275,
           "years_repaying": 9,
-          "effective_rate": 117.1,
-          "saving_vs_baseline": 5193,
-          "saving_pct": 9.0
+          "effective_rate": 112.3,
+          "saving_vs_baseline": 7360,
+          "saving_pct": 12.7
         },
         {
           "income": 89000,
-          "total_repaid": 52538,
+          "total_repaid": 50412,
           "written_off": 0,
           "annual_repayment_year1": 5365,
           "years_repaying": 9,
-          "effective_rate": 116.8,
-          "saving_vs_baseline": 5041,
-          "saving_pct": 8.8
+          "effective_rate": 112.0,
+          "saving_vs_baseline": 7167,
+          "saving_pct": 12.4
         },
         {
           "income": 90000,
-          "total_repaid": 52393,
+          "total_repaid": 50307,
           "written_off": 0,
           "annual_repayment_year1": 5455,
           "years_repaying": 9,
-          "effective_rate": 116.4,
-          "saving_vs_baseline": 4890,
-          "saving_pct": 8.5
+          "effective_rate": 111.8,
+          "saving_vs_baseline": 6976,
+          "saving_pct": 12.2
         },
         {
           "income": 91000,
-          "total_repaid": 52249,
+          "total_repaid": 50203,
           "written_off": 0,
           "annual_repayment_year1": 5545,
           "years_repaying": 9,
-          "effective_rate": 116.1,
-          "saving_vs_baseline": 4737,
-          "saving_pct": 8.3
+          "effective_rate": 111.6,
+          "saving_vs_baseline": 6783,
+          "saving_pct": 11.9
         },
         {
           "income": 92000,
-          "total_repaid": 52104,
+          "total_repaid": 50106,
           "written_off": 0,
           "annual_repayment_year1": 5635,
-          "years_repaying": 9,
-          "effective_rate": 115.8,
-          "saving_vs_baseline": 4624,
-          "saving_pct": 8.2
+          "years_repaying": 8,
+          "effective_rate": 111.3,
+          "saving_vs_baseline": 6622,
+          "saving_pct": 11.7
         },
         {
           "income": 93000,
-          "total_repaid": 51959,
+          "total_repaid": 50026,
           "written_off": 0,
           "annual_repayment_year1": 5725,
-          "years_repaying": 9,
-          "effective_rate": 115.5,
-          "saving_vs_baseline": 4539,
-          "saving_pct": 8.0
+          "years_repaying": 8,
+          "effective_rate": 111.2,
+          "saving_vs_baseline": 6472,
+          "saving_pct": 11.5
         },
         {
           "income": 94000,
-          "total_repaid": 51820,
+          "total_repaid": 49947,
           "written_off": 0,
           "annual_repayment_year1": 5815,
           "years_repaying": 8,
-          "effective_rate": 115.2,
-          "saving_vs_baseline": 4447,
-          "saving_pct": 7.9
+          "effective_rate": 111.0,
+          "saving_vs_baseline": 6320,
+          "saving_pct": 11.2
         },
         {
           "income": 95000,
-          "total_repaid": 51710,
+          "total_repaid": 49867,
           "written_off": 0,
           "annual_repayment_year1": 5905,
           "years_repaying": 8,
-          "effective_rate": 114.9,
-          "saving_vs_baseline": 4327,
-          "saving_pct": 7.7
+          "effective_rate": 110.8,
+          "saving_vs_baseline": 6170,
+          "saving_pct": 11.0
         },
         {
           "income": 96000,
-          "total_repaid": 51600,
+          "total_repaid": 49788,
           "written_off": 0,
           "annual_repayment_year1": 5995,
           "years_repaying": 8,
-          "effective_rate": 114.7,
-          "saving_vs_baseline": 4206,
-          "saving_pct": 7.5
+          "effective_rate": 110.6,
+          "saving_vs_baseline": 6018,
+          "saving_pct": 10.8
         },
         {
           "income": 97000,
-          "total_repaid": 51490,
+          "total_repaid": 49708,
           "written_off": 0,
           "annual_repayment_year1": 6085,
           "years_repaying": 8,
-          "effective_rate": 114.4,
-          "saving_vs_baseline": 4086,
-          "saving_pct": 7.4
+          "effective_rate": 110.5,
+          "saving_vs_baseline": 5868,
+          "saving_pct": 10.6
         },
         {
           "income": 98000,
-          "total_repaid": 51381,
+          "total_repaid": 49629,
           "written_off": 0,
           "annual_repayment_year1": 6175,
           "years_repaying": 8,
-          "effective_rate": 114.2,
-          "saving_vs_baseline": 3965,
-          "saving_pct": 7.2
+          "effective_rate": 110.3,
+          "saving_vs_baseline": 5717,
+          "saving_pct": 10.3
         },
         {
           "income": 99000,
-          "total_repaid": 51271,
+          "total_repaid": 49549,
           "written_off": 0,
           "annual_repayment_year1": 6265,
           "years_repaying": 8,
-          "effective_rate": 113.9,
-          "saving_vs_baseline": 3886,
-          "saving_pct": 7.0
+          "effective_rate": 110.1,
+          "saving_vs_baseline": 5608,
+          "saving_pct": 10.2
         },
         {
           "income": 100000,
-          "total_repaid": 51161,
+          "total_repaid": 49470,
           "written_off": 0,
           "annual_repayment_year1": 6355,
           "years_repaying": 8,
-          "effective_rate": 113.7,
-          "saving_vs_baseline": 3822,
-          "saving_pct": 7.0
+          "effective_rate": 109.9,
+          "saving_vs_baseline": 5513,
+          "saving_pct": 10.0
         },
         {
           "income": 101000,
-          "total_repaid": 51051,
+          "total_repaid": 49397,
           "written_off": 0,
           "annual_repayment_year1": 6445,
-          "years_repaying": 8,
-          "effective_rate": 113.4,
-          "saving_vs_baseline": 3758,
-          "saving_pct": 6.9
+          "years_repaying": 7,
+          "effective_rate": 109.8,
+          "saving_vs_baseline": 5412,
+          "saving_pct": 9.9
         },
         {
           "income": 102000,
-          "total_repaid": 50942,
+          "total_repaid": 49339,
           "written_off": 0,
           "annual_repayment_year1": 6535,
-          "years_repaying": 8,
-          "effective_rate": 113.2,
-          "saving_vs_baseline": 3693,
-          "saving_pct": 6.8
+          "years_repaying": 7,
+          "effective_rate": 109.6,
+          "saving_vs_baseline": 5296,
+          "saving_pct": 9.7
         },
         {
           "income": 103000,
-          "total_repaid": 50838,
+          "total_repaid": 49281,
           "written_off": 0,
           "annual_repayment_year1": 6625,
           "years_repaying": 7,
-          "effective_rate": 113.0,
-          "saving_vs_baseline": 3623,
-          "saving_pct": 6.7
+          "effective_rate": 109.5,
+          "saving_vs_baseline": 5180,
+          "saving_pct": 9.5
         },
         {
           "income": 104000,
-          "total_repaid": 50757,
+          "total_repaid": 49222,
           "written_off": 0,
           "annual_repayment_year1": 6715,
           "years_repaying": 7,
-          "effective_rate": 112.8,
-          "saving_vs_baseline": 3531,
-          "saving_pct": 6.5
+          "effective_rate": 109.4,
+          "saving_vs_baseline": 5066,
+          "saving_pct": 9.3
         },
         {
           "income": 105000,
-          "total_repaid": 50677,
+          "total_repaid": 49164,
           "written_off": 0,
           "annual_repayment_year1": 6805,
           "years_repaying": 7,
-          "effective_rate": 112.6,
-          "saving_vs_baseline": 3437,
-          "saving_pct": 6.4
+          "effective_rate": 109.3,
+          "saving_vs_baseline": 4950,
+          "saving_pct": 9.1
         },
         {
           "income": 106000,
-          "total_repaid": 50597,
+          "total_repaid": 49106,
           "written_off": 0,
           "annual_repayment_year1": 6895,
           "years_repaying": 7,
-          "effective_rate": 112.4,
-          "saving_vs_baseline": 3343,
-          "saving_pct": 6.2
+          "effective_rate": 109.1,
+          "saving_vs_baseline": 4834,
+          "saving_pct": 9.0
         },
         {
           "income": 107000,
-          "total_repaid": 50517,
+          "total_repaid": 49048,
           "written_off": 0,
           "annual_repayment_year1": 6985,
           "years_repaying": 7,
-          "effective_rate": 112.3,
-          "saving_vs_baseline": 3249,
-          "saving_pct": 6.0
+          "effective_rate": 109.0,
+          "saving_vs_baseline": 4718,
+          "saving_pct": 8.8
         },
         {
           "income": 108000,
-          "total_repaid": 50437,
+          "total_repaid": 48990,
           "written_off": 0,
           "annual_repayment_year1": 7075,
           "years_repaying": 7,
-          "effective_rate": 112.1,
-          "saving_vs_baseline": 3199,
-          "saving_pct": 6.0
+          "effective_rate": 108.9,
+          "saving_vs_baseline": 4646,
+          "saving_pct": 8.7
         },
         {
           "income": 109000,
-          "total_repaid": 50357,
+          "total_repaid": 48931,
           "written_off": 0,
           "annual_repayment_year1": 7165,
           "years_repaying": 7,
-          "effective_rate": 111.9,
-          "saving_vs_baseline": 3152,
-          "saving_pct": 5.9
+          "effective_rate": 108.7,
+          "saving_vs_baseline": 4578,
+          "saving_pct": 8.6
         },
         {
           "income": 110000,
-          "total_repaid": 50276,
+          "total_repaid": 48873,
           "written_off": 0,
           "annual_repayment_year1": 7255,
           "years_repaying": 7,
-          "effective_rate": 111.7,
-          "saving_vs_baseline": 3107,
-          "saving_pct": 5.8
+          "effective_rate": 108.6,
+          "saving_vs_baseline": 4510,
+          "saving_pct": 8.4
         },
         {
           "income": 111000,
-          "total_repaid": 50196,
+          "total_repaid": 48815,
           "written_off": 0,
           "annual_repayment_year1": 7345,
           "years_repaying": 7,
-          "effective_rate": 111.5,
-          "saving_vs_baseline": 3060,
-          "saving_pct": 5.7
+          "effective_rate": 108.5,
+          "saving_vs_baseline": 4441,
+          "saving_pct": 8.3
         },
         {
           "income": 112000,
-          "total_repaid": 50116,
+          "total_repaid": 48757,
           "written_off": 0,
           "annual_repayment_year1": 7435,
           "years_repaying": 7,
-          "effective_rate": 111.4,
-          "saving_vs_baseline": 3014,
-          "saving_pct": 5.7
+          "effective_rate": 108.3,
+          "saving_vs_baseline": 4373,
+          "saving_pct": 8.2
         },
         {
           "income": 113000,
-          "total_repaid": 50036,
+          "total_repaid": 48704,
           "written_off": 0,
           "annual_repayment_year1": 7525,
-          "years_repaying": 7,
-          "effective_rate": 111.2,
-          "saving_vs_baseline": 2968,
-          "saving_pct": 5.6
+          "years_repaying": 6,
+          "effective_rate": 108.2,
+          "saving_vs_baseline": 4300,
+          "saving_pct": 8.1
         },
         {
           "income": 114000,
-          "total_repaid": 49956,
+          "total_repaid": 48664,
           "written_off": 0,
           "annual_repayment_year1": 7615,
-          "years_repaying": 7,
-          "effective_rate": 111.0,
-          "saving_vs_baseline": 2921,
-          "saving_pct": 5.5
+          "years_repaying": 6,
+          "effective_rate": 108.1,
+          "saving_vs_baseline": 4213,
+          "saving_pct": 8.0
         },
         {
           "income": 115000,
-          "total_repaid": 49882,
+          "total_repaid": 48624,
           "written_off": 0,
           "annual_repayment_year1": 7705,
           "years_repaying": 6,
-          "effective_rate": 110.8,
-          "saving_vs_baseline": 2869,
-          "saving_pct": 5.4
+          "effective_rate": 108.1,
+          "saving_vs_baseline": 4127,
+          "saving_pct": 7.8
         },
         {
           "income": 116000,
-          "total_repaid": 49826,
+          "total_repaid": 48583,
           "written_off": 0,
           "annual_repayment_year1": 7795,
           "years_repaying": 6,
-          "effective_rate": 110.7,
-          "saving_vs_baseline": 2798,
-          "saving_pct": 5.3
+          "effective_rate": 108.0,
+          "saving_vs_baseline": 4041,
+          "saving_pct": 7.7
         },
         {
           "income": 117000,
-          "total_repaid": 49771,
+          "total_repaid": 48543,
           "written_off": 0,
           "annual_repayment_year1": 7885,
           "years_repaying": 6,
-          "effective_rate": 110.6,
-          "saving_vs_baseline": 2727,
-          "saving_pct": 5.2
+          "effective_rate": 107.9,
+          "saving_vs_baseline": 3955,
+          "saving_pct": 7.5
         },
         {
           "income": 118000,
-          "total_repaid": 49715,
+          "total_repaid": 48503,
           "written_off": 0,
           "annual_repayment_year1": 7975,
           "years_repaying": 6,
-          "effective_rate": 110.5,
-          "saving_vs_baseline": 2656,
-          "saving_pct": 5.1
+          "effective_rate": 107.8,
+          "saving_vs_baseline": 3868,
+          "saving_pct": 7.4
         },
         {
           "income": 119000,
-          "total_repaid": 49659,
+          "total_repaid": 48462,
           "written_off": 0,
           "annual_repayment_year1": 8065,
           "years_repaying": 6,
-          "effective_rate": 110.4,
-          "saving_vs_baseline": 2592,
-          "saving_pct": 5.0
+          "effective_rate": 107.7,
+          "saving_vs_baseline": 3789,
+          "saving_pct": 7.3
         },
         {
           "income": 120000,
-          "total_repaid": 49604,
+          "total_repaid": 48422,
           "written_off": 0,
           "annual_repayment_year1": 8155,
           "years_repaying": 6,
-          "effective_rate": 110.2,
-          "saving_vs_baseline": 2559,
-          "saving_pct": 4.9
+          "effective_rate": 107.6,
+          "saving_vs_baseline": 3741,
+          "saving_pct": 7.2
         }
       ]
     }
@@ -3073,7 +3073,7 @@
         0,
         0
       ],
-      "interest_cap_rpi_plus_1": [
+      "interest_cap_rpi": [
         0,
         0,
         0,
@@ -3159,7 +3159,7 @@
         0,
         0
       ],
-      "interest_cap_rpi_plus_1": [
+      "interest_cap_rpi": [
         505,
         606,
         674,
@@ -3245,7 +3245,7 @@
         0,
         0
       ],
-      "interest_cap_rpi_plus_1": [
+      "interest_cap_rpi": [
         1855,
         1999,
         2097,
@@ -3269,10 +3269,10 @@
         3230,
         3304,
         3380,
-        3458,
-        3537,
-        3619,
-        3574,
+        2516,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -3331,7 +3331,7 @@
         0,
         0
       ],
-      "interest_cap_rpi_plus_1": [
+      "interest_cap_rpi": [
         3655,
         3857,
         3993,
@@ -3344,7 +3344,7 @@
         4732,
         4841,
         4953,
-        4754,
+        1043,
         0,
         0,
         0,
