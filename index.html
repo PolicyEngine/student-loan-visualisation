@@ -589,7 +589,7 @@
     interest_cap_rpi: 'Cap interest at RPI',
   };
 
-  const incomeRange = [20000, 100000];
+  const incomeRange = [0, 100000];
   const fmt = d3.format(',.0f');
   const fmtk = v => {
     if (Math.abs(v) >= 1000) return `£${(v/1000).toFixed(0)}k`;
@@ -639,7 +639,8 @@
   for (const k of ALL_KEYS) {
     const item = document.createElement('div');
     item.className = 'legend-item';
-    item.innerHTML = `<span class="legend-swatch" style="background:${RAW_COLORS[k]}"></span>${LABELS[k]}`;
+    const dash = k === 'baseline' ? 'stroke-dasharray="4,3"' : '';
+    item.innerHTML = `<svg width="16" height="3" style="flex-shrink:0"><line x1="0" y1="1.5" x2="16" y2="1.5" stroke="${RAW_COLORS[k]}" stroke-width="2.5" ${dash}/></svg>${LABELS[k]}`;
     legendEl.appendChild(item);
   }
 
@@ -648,7 +649,8 @@
   for (const k of ALL_KEYS) {
     const item = document.createElement('div');
     item.className = 'legend-item';
-    item.innerHTML = `<span class="legend-swatch" style="background:${RAW_COLORS[k]}"></span>${LABELS[k]}`;
+    const dash = k === 'baseline' ? 'stroke-dasharray="4,3"' : '';
+    item.innerHTML = `<svg width="16" height="3" style="flex-shrink:0"><line x1="0" y1="1.5" x2="16" y2="1.5" stroke="${RAW_COLORS[k]}" stroke-width="2.5" ${dash}/></svg>${LABELS[k]}`;
     yearsLegendEl.appendChild(item);
   }
 
@@ -745,7 +747,7 @@
 
     g.append('text')
       .attr('x', w - 4)
-      .attr('y', y(45000) - 6)
+      .attr('y', y(45000) + 14)
       .attr('text-anchor', 'end')
       .attr('font-family', 'var(--font-ui)')
       .attr('font-size', '10px')
@@ -776,51 +778,7 @@
         .attr('stroke', RAW_COLORS[k]);
     }
 
-    // Annotations on the lines
-    const annotations = [
-      { scenario: 'baseline', income: 50000, label: 'Current system: £87k', labelSide: 'right', labelDy: -14 },
-      { scenario: 'cancel_freeze', income: 35000, label: 'Cancel freeze: £22k', labelSide: 'right', labelDy: -14 },
-      { scenario: 'interest_cap_rpi', income: 50000, label: 'RPI cap: £63k', labelSide: 'right', labelDy: 18 },
-    ];
-
-    for (const ann of annotations) {
-      const dp = scenarios[ann.scenario].data.find(d => d.income === ann.income);
-      if (!dp) continue;
-      const cx = x(ann.income);
-      const cy = y(dp.total_repaid);
-
-      plotArea.append('circle')
-        .attr('class', 'annotation-dot')
-        .attr('cx', cx).attr('cy', cy)
-        .attr('r', 4)
-        .attr('fill', RAW_COLORS[ann.scenario]);
-
-      const labelX = cx + (ann.labelSide === 'left' ? -10 : 10);
-      const anchor = ann.labelSide === 'left' ? 'end' : 'start';
-      const labelY = cy + (ann.labelDy || -10);
-
-      // White halo behind text for legibility over lines
-      plotArea.append('text')
-        .attr('class', 'annotation-text')
-        .attr('x', labelX)
-        .attr('y', labelY)
-        .attr('text-anchor', anchor)
-        .attr('stroke', 'white')
-        .attr('stroke-width', 4)
-        .attr('stroke-linejoin', 'round')
-        .attr('fill', 'white')
-        .attr('paint-order', 'stroke')
-        .text(ann.label);
-
-      // Coloured text on top
-      plotArea.append('text')
-        .attr('class', 'annotation-text')
-        .attr('x', labelX)
-        .attr('y', labelY)
-        .attr('text-anchor', anchor)
-        .attr('fill', RAW_COLORS[ann.scenario])
-        .text(ann.label);
-    }
+    // Annotations removed — legend is sufficient
 
     // Percentile markers along x-axis
     const percentiles = [

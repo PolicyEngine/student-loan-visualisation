@@ -40,6 +40,126 @@
       "description": "Threshold frozen at \u00a329,385 from 2027, interest RPI + 0\u20133%",
       "data": [
         {
+          "income": 0,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 1000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 2000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 3000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 4000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 5000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 6000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 7000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 8000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 9000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 10000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 11000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 12000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 13000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
+          "income": 14000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0
+        },
+        {
           "income": 15000,
           "total_repaid": 0,
           "written_off": 106498,
@@ -893,6 +1013,156 @@
       "label": "Cancel the threshold freeze",
       "description": "Uprate threshold annually with average earnings growth (OBR forecasts)",
       "data": [
+        {
+          "income": 0,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 1000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 2000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 3000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 4000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 5000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 6000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 7000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 8000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 9000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 10000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 11000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 12000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 13000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 14000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
         {
           "income": 15000,
           "total_repaid": 0,
@@ -1959,6 +2229,156 @@
       "label": "Cap interest at RPI",
       "description": "Cap the interest rate at RPI (0% margin), as proposed by the Conservative Party",
       "data": [
+        {
+          "income": 0,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 1000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 2000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 3000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 4000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 5000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 6000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 7000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 8000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 9000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 10000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 11000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 12000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 13000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
+        {
+          "income": 14000,
+          "total_repaid": 0,
+          "written_off": 106498,
+          "annual_repayment_year1": 0,
+          "years_repaying": 0,
+          "effective_rate": 0.0,
+          "saving_vs_baseline": 0,
+          "saving_pct": 0
+        },
         {
           "income": 15000,
           "total_repaid": 0,

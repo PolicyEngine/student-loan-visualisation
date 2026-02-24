@@ -29,7 +29,7 @@ LOAN_TERM_YEARS = 30
 AVERAGE_DEBT = 45_000
 
 # Income distribution: £15k to £120k
-INCOMES = list(range(15_000, 120_001, 1_000))
+INCOMES = list(range(0, 120_001, 1_000))
 
 # OBR November 2025 EFO forecasts (year-by-year, starting from 2026-27)
 # Source: https://obr.uk/efo/economic-and-fiscal-outlook-november-2025/
