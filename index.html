@@ -74,7 +74,7 @@
   .pe-brand svg { width: 28px; height: 28px; }
 
   .container {
-    max-width: 720px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 24px;
   }
@@ -107,6 +107,14 @@
     color: var(--gray-400);
   }
 
+  .section-heading {
+    font-family: var(--font-chart);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 32px 0 16px;
+  }
+
   /* Body prose */
   .prose {
     font-family: var(--font-body);
@@ -124,6 +132,13 @@
   .prose em {
     font-style: italic;
   }
+
+  .prose a {
+    color: #2563EB;
+    text-decoration: underline;
+  }
+
+  .prose a:hover { color: #1D4ED8; }
 
   ul.prose {
     padding-left: 24px;
@@ -403,34 +418,36 @@
 
   /* Methodology */
   .methodology {
-    padding: 32px 0 48px;
-    border-top: 1px solid var(--border-light);
     margin-top: 32px;
+    padding-bottom: 48px;
   }
 
-  .methodology h3 {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+  .methodology summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .methodology summary::-webkit-details-marker { display: none; }
+
+  .methodology summary .section-heading::after {
+    content: ' ▶';
+    font-size: 14px;
     color: var(--gray-400);
-    margin-bottom: 12px;
   }
 
-  .methodology p {
-    font-size: 13px;
-    color: var(--gray-500);
+  .methodology[open] summary .section-heading::after {
+    content: ' ▼';
+    font-size: 14px;
+  }
+
+  .methodology .prose {
+    margin-top: 16px;
+    font-family: var(--font-body);
+    font-size: 16px;
     line-height: 1.7;
-    margin-bottom: 10px;
+    color: var(--text-secondary);
   }
 
-  .methodology a {
-    color: var(--teal-600);
-    text-decoration: none;
-  }
-
-  .methodology a:hover { text-decoration: underline; }
 
   .footer {
     padding: 24px;
@@ -462,12 +479,16 @@
 <div class="container">
   <div class="hero">
     <h1>The distributional impact of student loan reform</h1>
-    <p class="subtitle">The debate between Martin Lewis and Kemi Badenoch raised a central question: who saves the most under different student loan reforms. We model two reforms, cancelling the planned threshold freeze and capping interest rates, across the income distribution.</p>
+    <p class="subtitle">The debate between Martin Lewis and Kemi Badenoch raised a central question: who saves most under different student loan reforms? This blog post models two reforms, cancelling the planned threshold freeze and capping interest rates, across the income distribution.</p>
   </div>
 
-  <p class="prose">Under <a href="https://www.gov.uk/repaying-your-student-loan/what-you-pay">Plan 2</a>, graduates repay 9% of income above a threshold that the Autumn Budget 2025 froze at &pound;29,385 for three years. Interest is charged at RPI plus up to 3%, scaled by income. Loans are written off after 30 years. A median graduate starting on &pound;35k repays <strong>&pound;29,187</strong> over their lifetime, with the remaining balance written off.</p>
+  <h2 class="section-heading">Introduction</h2>
 
-  <p class="prose">We compare <a href="https://www.theguardian.com/money/2025/feb/20/why-the-student-loans-row-is-escalating-and-what-it-means-for-graduates">two reforms</a>, each with a policy precedent. <strong>Cancelling the threshold freeze</strong>, advocated by Martin Lewis, would uprate the repayment threshold with earnings growth each year, reaching around &pound;33,000 by 2031. <strong>Capping interest at RPI</strong>, proposed by Conservative leader Kemi Badenoch, would eliminate the interest margin entirely, so graduates repay only what they borrowed in real terms.</p>
+  <p class="prose">Under <a href="https://www.gov.uk/repaying-your-student-loan/what-you-pay">Plan 2</a>, graduates repay 9% of income above a threshold that the Autumn Budget 2025 froze at &pound;29,385 for three years. Interest is charged at RPI plus up to 3%, scaled by income. Loans are written off after 30 years. A median graduate starting on &pound;35k with a &pound;45,000 loan repays <strong>&pound;29,187</strong> over their lifetime, with the remaining balance written off.</p>
+
+  <p class="prose">We compare <a href="https://www.theguardian.com/money/2025/feb/20/why-the-student-loans-row-is-escalating-and-what-it-means-for-graduates">two reforms</a>, each with a policy precedent. <strong>Cancelling the threshold freeze</strong>, advocated by Martin Lewis, would uprate the repayment threshold with earnings growth each year, reaching around &pound;33,000 by 2032. <strong>Capping interest at RPI</strong>, proposed by Conservative leader Kemi Badenoch, would eliminate the interest margin entirely, so graduates repay only what they borrowed in real terms.</p>
+
+  <h2 class="section-heading">Total lifetime repayment</h2>
 
   <p class="prose">The two reforms affect different parts of the income distribution. The following chart shows total lifetime repayment under each scenario by starting graduate salary.</p>
 
@@ -481,7 +502,9 @@
     </div>
   </div>
 
-  <p class="prose">Cancelling the threshold freeze reduces repayments for graduates starting on roughly &pound;28k to &pound;50k, with the largest reduction of &pound;7,609 at &pound;30k. Capping interest at RPI reduces repayments for higher earners, with the largest reduction of &pound;40,952 at &pound;54k.</p>
+  <p class="prose">Cancelling the threshold freeze reduces repayments for graduates starting on roughly &pound;28k to &pound;53k, with the largest reduction of &pound;7,609 at &pound;30k. Capping interest at RPI reduces repayments for higher earners, with the largest reduction of &pound;40,952 at &pound;54k.</p>
+
+  <h2 class="section-heading">Repayment by income decile</h2>
 
   <p class="prose">The table below maps each reform to the ten UK personal income deciles, showing what a typical earner in each tenth of the distribution would repay.</p>
 
@@ -513,7 +536,9 @@
 
   <p class="prose">Graduates in the bottom half of the income distribution have their loans written off under both reforms. For higher earners, the interest cap shortens the repayment period while cancelling the freeze has little effect on duration.</p>
 
-  <p class="prose">The following chart shows how many years graduates repay under each scenario. Lower earners hit the 30-year writeoff, while higher earners clear their debt sooner.</p>
+  <h2 class="section-heading">Years of repayment</h2>
+
+  <p class="prose">The following chart shows how many years graduates repay under each scenario. Lower earners hit the 30-year write-off, while higher earners clear their debt sooner.</p>
 
   <div class="chart-section">
     <div class="chart-title">Figure 2. Years of repayment</div>
@@ -526,6 +551,8 @@
   </div>
 
   <p class="prose">Capping interest at RPI shortens the repayment period for graduates starting above around &pound;45k. Cancelling the threshold freeze does not change the number of years repaying for most graduates, but reduces the amount repaid each year.</p>
+
+  <h2 class="section-heading">Annual repayment over time</h2>
 
   <p class="prose">The panels below show how annual repayments evolve over time under each reform, for four representative starting salaries.</p>
 
@@ -558,13 +585,13 @@
 
   <p class="prose">For lower starting salaries, the two reforms produce similar annual repayment paths. At higher starting salaries, the interest cap leads to earlier repayment completion, while cancelling the freeze reduces annual amounts throughout the repayment period.</p>
 
-  <div class="methodology">
-    <h3>Methodology</h3>
-    <p>This analysis models Plan 2 (post-2012) student loans with an average starting debt of &pound;45,000. Repayments are calculated as 9% of income above the repayment threshold (&pound;29,385 in 2026-27), with loans written off after 30 years. Interest is charged at RPI plus a margin of 0&ndash;3%, scaled linearly by income between the threshold and &pound;51,245.</p>
-    <p>The baseline reflects the Autumn Budget 2025 policy: the threshold is frozen at &pound;29,385 for three years (2027&ndash;2030), then resumes annual uprating. The &ldquo;cancel the freeze&rdquo; scenario uprates the threshold annually with OBR earnings growth forecasts. The interest cap scenario eliminates the margin above RPI, so loans accrue interest at RPI only.</p>
-    <p>Economic assumptions use the <a href="https://obr.uk/efo/economic-and-fiscal-outlook-november-2025/">OBR November 2025 Economic and Fiscal Outlook</a>: RPI of 3.7% in 2026-27 falling to 2.9% long-run, and nominal earnings growth of 3.2% in 2026-27 falling to 2.3% long-run.</p>
-    <p>This is a simplified model. It assumes constant employment and does not account for career breaks or part-time work. All individuals are assumed to start with the same debt and grow their earnings at the OBR average rate.</p>
-  </div>
+  <details class="methodology">
+    <summary><h2 class="section-heading" style="display:inline;margin:0;cursor:pointer;">Methodology</h2></summary>
+    <p class="prose">This analysis models Plan 2 (post-2012) student loans with an average starting debt of &pound;45,000. Repayments are calculated as 9% of income above the repayment threshold (&pound;29,385 in 2026-27), with loans written off after 30 years. Interest is charged at RPI plus a margin of 0&ndash;3%, scaled linearly by income between the threshold and &pound;51,245.</p>
+    <p class="prose">The baseline reflects the Autumn Budget 2025 policy: the threshold is frozen at &pound;29,385 for three years (2027&ndash;2030), then resumes annual uprating. The &ldquo;cancel the freeze&rdquo; scenario uprates the threshold annually with OBR earnings growth forecasts. The interest cap scenario eliminates the margin above RPI, so loans accrue interest at RPI only.</p>
+    <p class="prose">Economic assumptions use the <a href="https://obr.uk/efo/economic-and-fiscal-outlook-november-2025/">OBR November 2025 Economic and Fiscal Outlook</a>: RPI of 3.7% in 2026-27 falling to 2.9% long-run, and nominal earnings growth of 3.2% in 2026-27 falling to 2.3% long-run.</p>
+    <p class="prose">This is a simplified model. It assumes constant employment and does not account for career breaks or part-time work. All individuals are assumed to start with the same debt and grow their earnings at the OBR average rate.</p>
+  </details>
 </div>
 
 
@@ -959,7 +986,7 @@
       .attr('fill', '#9CA3AF')
       .text('Starting graduate salary');
 
-    // 30yr writeoff reference line
+    // 30yr write-off reference line
     plotArea.append('line')
       .attr('class', 'zero-line')
       .attr('x1', 0).attr('x2', w)
@@ -973,7 +1000,7 @@
       .attr('font-family', 'var(--font-ui)')
       .attr('font-size', '10px')
       .attr('fill', '#9CA3AF')
-      .text('30yr writeoff');
+      .text('30yr write-off');
 
     // Lines
     const lineGen = d3.line()
