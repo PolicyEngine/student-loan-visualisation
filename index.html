@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Who really benefits from student loan reform? | PolicyEngine</title>
+<title>The distributional impact of student loan reform | PolicyEngine</title>
 <meta name="description" content="Interactive visualisation comparing how cancelling the threshold freeze vs capping interest rates affects different parts of the graduate income distribution.">
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,26 +52,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  .header {
-    padding: 8px 16px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--border-light);
-    background: var(--bg-primary);
-  }
-
-  .pe-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--teal-500);
-    text-decoration: none;
-  }
-
-  .pe-brand svg { width: 28px; height: 28px; }
 
   .container {
     max-width: 960px;
@@ -101,11 +81,13 @@
     line-height: 1.6;
   }
 
-  .byline {
-    margin-top: 20px;
-    font-size: 14px;
-    color: var(--gray-400);
+  .subtitle a {
+    color: #2563EB;
+    text-decoration: underline;
   }
+
+  .subtitle a:hover { color: #1D4ED8; }
+
 
   .section-heading {
     font-family: var(--font-chart);
@@ -449,21 +431,6 @@
   }
 
 
-  .footer {
-    padding: 24px;
-    text-align: center;
-    border-top: 1px solid var(--border-light);
-  }
-
-  .footer p {
-    font-size: 13px;
-    color: var(--gray-400);
-  }
-
-  .footer a {
-    color: var(--teal-500);
-    text-decoration: none;
-  }
 
   /* Mobile */
   @media (max-width: 768px) {
