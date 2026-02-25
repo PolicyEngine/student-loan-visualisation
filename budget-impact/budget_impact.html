@@ -299,6 +299,24 @@
     margin-bottom: 4px;
   }
 
+  .sensitivity summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .sensitivity summary::-webkit-details-marker { display: none; }
+
+  .sensitivity summary strong::after {
+    content: ' ▶';
+    font-size: 13px;
+    color: var(--gray-400);
+  }
+
+  .sensitivity[open] summary strong::after {
+    content: ' ▼';
+    font-size: 13px;
+  }
+
   /* Mobile */
   @media (max-width: 768px) {
     h1 { font-size: 26px; }
@@ -373,6 +391,70 @@
       <li><strong>Compare interest accrual:</strong> baseline (RPI + 0&ndash;3% margin) vs reformed (RPI only).</li>
       <li><strong>Fiscal cost</strong> = lost interest income on the loan book &mdash; the margin that no longer accrues, reducing the government&rsquo;s loan asset value.</li>
     </ol>
+
+    <details class="sensitivity" style="margin-top:16px;">
+      <summary><p class="prose" style="display:inline;cursor:pointer;margin:0;"><strong>Sensitivity analysis (Reform 2)</strong></p></summary>
+    <p class="prose">The interest cap estimate depends on assumptions about borrowers&rsquo; current loan balances, which PolicyEngine UK does not track directly. We tested four alternative assumptions to check how much they move the headline estimate:</p>
+    <ol>
+      <li><strong>RPI-deflated historical income:</strong> The baseline uses current income to estimate past repayments. In practice, graduates earned less in earlier years. This test deflates income by cumulative RPI for each historical year, resulting in lower past repayments and higher current balances.</li>
+      <li><strong>Graduation age 22:</strong> The baseline assumes graduation at 21. Shifting to 22 gives each borrower one fewer year of repayment history, increasing their estimated balance.</li>
+      <li><strong>Debt variance:</strong> The baseline gives every borrower in a cohort the same starting debt. This test applies a log-normal spread (standard deviation 0.3) around the cohort average, so some borrowers start with more and some with less. This raises the average balance because interest compounds faster on larger debts.</li>
+    </ol>
+
+    <div class="table-section" style="margin-top:16px;">
+      <div class="section-title">Table 2. Sensitivity of interest cap cost (&pound;bn per year)</div>
+      <div class="section-subtitle">Lost interest income under alternative assumptions</div>
+      <div class="table-scroll">
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th class="col-year" style="text-align:left;">Scenario</th>
+              <th>2026&ndash;27</th>
+              <th>2027&ndash;28</th>
+              <th>2028&ndash;29</th>
+              <th>2029&ndash;30</th>
+              <th>2030&ndash;31</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-year">Baseline</td>
+              <td>1.8</td>
+              <td>1.9</td>
+              <td>2.0</td>
+              <td>2.0</td>
+              <td>1.9</td>
+            </tr>
+            <tr>
+              <td class="col-year">RPI-deflated income</td>
+              <td>2.3</td>
+              <td>2.4</td>
+              <td>2.5</td>
+              <td>2.6</td>
+              <td>2.4</td>
+            </tr>
+            <tr>
+              <td class="col-year">Graduation age 22</td>
+              <td>2.0</td>
+              <td>2.1</td>
+              <td>2.1</td>
+              <td>2.2</td>
+              <td>2.0</td>
+            </tr>
+            <tr>
+              <td class="col-year">Debt variance (std 0.3)</td>
+              <td>2.1</td>
+              <td>2.2</td>
+              <td>2.3</td>
+              <td>2.3</td>
+              <td>2.2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    </details>
   </details>
 </div>
 
