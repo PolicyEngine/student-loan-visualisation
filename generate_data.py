@@ -287,8 +287,6 @@ def generate_scenarios() -> dict:
     for sal in profile_salaries:
         profiles = {}
         for scenario_key, scenario in scenarios.items():
-            if scenario_key == "baseline":
-                continue
             yearly = simulate_yearly(
                 starting_income=sal,
                 threshold_mode=scenario["threshold_mode"],

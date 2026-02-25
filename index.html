@@ -558,7 +558,7 @@
 
   <div class="chart-section">
     <div class="chart-title">Figure 3. Annual student loan repayment over time</div>
-    <div class="chart-subtitle">Two proposed reforms at four income levels (&pound;45k loan, Plan 2)</div>
+    <div class="chart-subtitle">Three scenarios at four income levels (&pound;45k loan, Plan 2)</div>
     <div class="chart-wrapper" id="annual-chart-wrapper">
       <div class="legend" id="annual-legend"></div>
       <div class="tooltip" id="annual-tooltip"></div>
@@ -583,7 +583,7 @@
     </div>
   </div>
 
-  <p class="prose">For lower starting salaries, the two reforms produce similar annual repayment paths. At higher starting salaries, the interest cap leads to earlier repayment completion, while cancelling the freeze reduces annual amounts throughout the repayment period.</p>
+  <p class="prose">For lower starting salaries, the three scenarios produce similar annual repayment paths. At higher starting salaries, the interest cap produces the same annual repayments as the current system but clears the balance sooner, while cancelling the freeze reduces annual repayments throughout.</p>
 
   <details class="methodology">
     <summary><h2 class="section-heading" style="display:inline;margin:0;cursor:pointer;">Methodology</h2></summary>
@@ -681,12 +681,12 @@
   }
 
   // Annual chart legend
-  const REFORM_KEYS = ['cancel_freeze', 'interest_cap_rpi'];
   const annualLegendEl = document.getElementById('annual-legend');
-  for (const k of REFORM_KEYS) {
+  for (const k of ALL_KEYS) {
     const item = document.createElement('div');
     item.className = 'legend-item';
-    item.innerHTML = `<span class="legend-swatch" style="background:${RAW_COLORS[k]}"></span>${LABELS[k]}`;
+    const dash = k === 'baseline' ? 'stroke-dasharray="4,3"' : '';
+    item.innerHTML = `<svg width="16" height="3" style="flex-shrink:0"><line x1="0" y1="1.5" x2="16" y2="1.5" stroke="${RAW_COLORS[k]}" stroke-width="2.5" ${dash}/></svg>${LABELS[k]}`;
     annualLegendEl.appendChild(item);
   }
 
@@ -1120,7 +1120,7 @@
       if (!profileData) continue;
 
       let maxVal = 0;
-      for (const k of REFORM_KEYS) {
+      for (const k of ALL_KEYS) {
         const vals = profileData[k];
         if (vals) maxVal = Math.max(maxVal, d3.max(vals));
       }
@@ -1156,8 +1156,8 @@
         .attr('fill', '#9CA3AF')
         .text('Years from graduation');
 
-      // Lines
-      for (const k of REFORM_KEYS) {
+      // Lines — reforms first, then baseline on top (dashed)
+      for (const k of ['cancel_freeze', 'interest_cap_rpi', 'baseline']) {
         const vals = profileData[k];
         if (!vals) continue;
         const lineData = vals.map((v, i) => ({ year: i + 1, repayment: v }));
@@ -1167,11 +1167,12 @@
           .y(d => y(d.repayment))
           .curve(d3.curveMonotoneX);
 
-        plotArea.append('path')
+        const path = plotArea.append('path')
           .datum(lineData)
           .attr('class', 'chart-line')
           .attr('d', lineGen)
           .attr('stroke', RAW_COLORS[k]);
+        if (k === 'baseline') path.attr('stroke-dasharray', '6, 3');
       }
 
       // Hover interaction
@@ -1180,7 +1181,7 @@
         .attr('y1', 0).attr('y2', h);
 
       const dots = {};
-      for (const k of REFORM_KEYS) {
+      for (const k of ALL_KEYS) {
         dots[k] = plotArea.append('circle')
           .attr('class', 'hover-dot')
           .attr('r', 3.5)
@@ -1196,14 +1197,14 @@
           if (yr < 1 || yr > 40) {
             tooltipEl.classList.remove('visible');
             hoverLine.attr('opacity', 0);
-            for (const k of REFORM_KEYS) dots[k].attr('opacity', 0);
+            for (const k of ALL_KEYS) dots[k].attr('opacity', 0);
             return;
           }
 
           hoverLine.attr('x1', x(yr)).attr('x2', x(yr)).attr('opacity', 1);
 
           let rows = '';
-          for (const k of REFORM_KEYS) {
+          for (const k of ALL_KEYS) {
             const vals = profileData[k];
             if (!vals) continue;
             const val = vals[yr - 1] || 0;
@@ -1230,7 +1231,7 @@
         .on('mouseleave touchend', function() {
           tooltipEl.classList.remove('visible');
           hoverLine.attr('opacity', 0);
-          for (const k of REFORM_KEYS) dots[k].attr('opacity', 0);
+          for (const k of ALL_KEYS) dots[k].attr('opacity', 0);
         });
     }
   }
