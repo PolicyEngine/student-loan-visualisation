@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budgetary impact of student loan reforms | PolicyEngine</title>
+<meta name="description" content="Estimated fiscal cost of cancelling the threshold freeze and capping interest at RPI, modelled with PolicyEngine UK microsimulation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600&family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-500: #319795;
+    --teal-600: #2C7A7B;
+    --teal-700: #285E61;
+    --blue-500: #0EA5E9;
+    --blue-700: #026AA2;
+    --gray-50: #F9FAFB;
+    --gray-100: #F2F4F7;
+    --gray-200: #E2E8F0;
+    --gray-300: #D1D5DB;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+    --gray-700: #344054;
+    --gray-800: #1F2937;
+    --gray-900: #101828;
+    --text-primary: #000000;
+    --text-secondary: #5A5A5A;
+    --bg-primary: #FFFFFF;
+    --border-light: #E2E8F0;
+    --border-medium: #CBD5E1;
+    --shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    --shadow-sm: 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
+    --shadow-md: 0px 4px 6px -1px rgba(16, 24, 40, 0.1);
+
+    --series-1: #319795;
+    --series-2: #0EA5E9;
+
+    --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-chart: 'Roboto Serif', Georgia, serif;
+    --font-body: 'Roboto', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-ui);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .hero {
+    padding: 48px 0 32px;
+  }
+
+  h1 {
+    font-family: var(--font-chart);
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  .subtitle a {
+    color: #2563EB;
+    text-decoration: underline;
+  }
+
+  .subtitle a:hover { color: #1D4ED8; }
+
+  .section-heading {
+    font-family: var(--font-chart);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 32px 0 16px;
+  }
+
+  /* Body prose */
+  .prose {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+
+  .prose strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .prose em {
+    font-style: italic;
+  }
+
+  .prose a {
+    color: #2563EB;
+    text-decoration: underline;
+  }
+
+  .prose a:hover { color: #1D4ED8; }
+
+  ul.prose {
+    padding-left: 24px;
+    margin-bottom: 16px;
+  }
+
+  ul.prose li {
+    margin-bottom: 8px;
+  }
+
+  /* Budget impact table */
+  .table-section {
+    margin: 28px 0;
+  }
+
+  .table-section .section-title {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .table-section .section-subtitle {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .budget-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+  }
+
+  .budget-table th,
+  .budget-table td {
+    padding: 12px 20px;
+    text-align: right;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .budget-table th {
+    background: var(--gray-50);
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .budget-table th.col-year,
+  .budget-table td.col-year {
+    text-align: left;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .budget-table th.group-freeze {
+    color: var(--teal-600);
+    background: #F0FDFA;
+  }
+
+  .budget-table th.group-cap {
+    color: var(--blue-700);
+    background: #F0F9FF;
+  }
+
+  .budget-table td {
+    font-variant-numeric: tabular-nums;
+    color: var(--gray-700);
+    font-size: 15px;
+  }
+
+  .budget-table td.val-freeze {
+    color: var(--teal-700);
+    font-weight: 500;
+  }
+
+  .budget-table td.val-cap {
+    color: var(--blue-700);
+    font-weight: 500;
+  }
+
+  .budget-table tbody tr:hover {
+    background: var(--gray-50);
+  }
+
+  .budget-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Sources list */
+  .sources-list {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    padding-left: 24px;
+    margin-bottom: 16px;
+  }
+
+  .sources-list li {
+    margin-bottom: 6px;
+  }
+
+  .sources-list a {
+    color: #2563EB;
+    text-decoration: underline;
+  }
+
+  .sources-list a:hover { color: #1D4ED8; }
+
+  /* Methodology */
+  .methodology {
+    margin-top: 32px;
+    padding-bottom: 48px;
+  }
+
+  .methodology summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .methodology summary::-webkit-details-marker { display: none; }
+
+  .methodology summary .section-heading::after {
+    content: ' ▶';
+    font-size: 14px;
+    color: var(--gray-400);
+  }
+
+  .methodology[open] summary .section-heading::after {
+    content: ' ▼';
+    font-size: 14px;
+  }
+
+  .methodology .prose {
+    margin-top: 16px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .methodology ol {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    padding-left: 24px;
+    margin-bottom: 16px;
+  }
+
+  .methodology ol li {
+    margin-bottom: 6px;
+  }
+
+  .methodology ul {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    padding-left: 24px;
+    margin-bottom: 8px;
+  }
+
+  .methodology ul li {
+    margin-bottom: 4px;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    h1 { font-size: 26px; }
+    .subtitle { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="hero">
+    <h1>Budgetary impact of student loan reforms</h1>
+    <p class="subtitle"></p>
+  </div>
+
+  <p class="prose">PolicyEngine <a href="https://github.com/PolicyEngine/student-loan-visualisation">estimates</a> the annual fiscal cost to government of two student loan reforms. Each reform reduces government revenue in a different way:</p>
+
+  <p class="prose"><strong>Cancel the threshold freeze.</strong> Under current law the Plan 2 repayment threshold is frozen at &pound;29,385 for 2027&ndash;2029. Cancelling the freeze would uprate it with RPI each year, meaning graduates repay less. The fiscal cost is the <strong>lost repayment revenue</strong> &mdash; the gap between what the government would have collected under the freeze and what it collects with a higher threshold.</p>
+
+  <p class="prose"><strong>Cap interest at RPI.</strong> Plan 2 loans currently accrue interest at RPI plus a margin of 0&ndash;3%, scaled by income. Capping interest at RPI removes that margin entirely, so graduates owe only what they borrowed in real terms. The fiscal cost is the <strong>lost interest income</strong> on the student loan book &mdash; the 0&ndash;3% margin that no longer accrues, reducing the value of the government&rsquo;s loan asset.</p>
+
+  <h2 class="section-heading">Budgetary impact</h2>
+
+  <p class="prose">The table below shows the estimated annual cost of each reform.</p>
+
+  <div class="table-section">
+    <div class="section-title">Table 1. Annual fiscal cost of student loan reforms</div>
+    <div class="section-subtitle">Values show cost to government (reduced revenue), &pound; billions</div>
+    <div class="table-scroll">
+      <table class="budget-table" id="budget-table">
+        <thead>
+          <tr>
+            <th class="col-year">Fiscal year</th>
+            <th class="group-freeze">Cancel freeze (&pound;bn)</th>
+            <th class="group-cap">Cap interest (&pound;bn)</th>
+          </tr>
+        </thead>
+        <tbody id="budget-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <p style="font-family:var(--font-ui);font-size:13px;color:var(--gray-500);margin-top:8px;">* The threshold is not frozen until 2027&ndash;28, so there is no divergence between baseline and reform in 2026&ndash;27.</p>
+
+  <h2 class="section-heading">Comparison with other estimates</h2>
+
+  <p class="prose">For the <strong>threshold freeze</strong>, the <a href="https://assets.publishing.service.gov.uk/media/69271396a245b0985f0340dd/OS_Budget_2025_Policy_Costings.pdf">OBR&rsquo;s Autumn Budget 2025 policy costings</a> estimate the freeze raises &pound;0.3bn in 2027&ndash;28 for the exchequer. PolicyEngine estimates cancelling the freeze would cost &pound;0.3bn in 2027&ndash;28.</p>
+
+  <p class="prose">For the <strong>interest rate cap</strong>, the <a href="https://archive.is/lpYvw">Conservative Party estimates</a> reported in <em>The Times</em> put the cost at &pound;2bn a year for the first few years, falling to &pound;1.3bn later. PolicyEngine estimates &pound;1.8&ndash;2.0bn per year over 2026&ndash;2030.</p>
+
+  <details class="methodology">
+    <summary><h2 class="section-heading" style="display:inline;margin:0;cursor:pointer;">Methodology</h2></summary>
+
+    <p class="prose"><strong>Reform 1: Cancel the threshold freeze</strong></p>
+    <ol>
+      <li><strong>Baseline (current law):</strong> <a href="https://policyengine.org">PolicyEngine UK</a> default &mdash; the Plan 2 repayment threshold is frozen at &pound;29,385 for 2027&ndash;2029, then resumes uprating.</li>
+      <li><strong>Calculate RPI-uprated thresholds:</strong> Apply <a href="https://obr.uk/efo/economic-and-fiscal-outlook-november-2025/">OBR November 2025 EFO</a> forecasts (RPI 3.7% in 2026&ndash;27, falling to 2.9% long-run; earnings growth 3.2%, falling to 2.3%) to uprate the threshold each year from its 2026 level.</li>
+      <li><strong>Run microsimulation</strong> for both the baseline (frozen) and reformed (uprated) scenarios across the graduate population.</li>
+      <li><strong>Fiscal impact</strong> = reformed total repayments &minus; baseline total repayments. A negative value means the government collects less.</li>
+    </ol>
+
+    <p class="prose"><strong>Reform 2: Cap interest at RPI</strong></p>
+    <ol>
+      <li><strong>Estimate each borrower&rsquo;s current Plan 2 balance</strong> (PolicyEngine UK does not track individual loan balances, so this step uses our own assumptions):
+        <ul>
+          <li>Start with &pound;45,600 (<a href="https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england">DfE Student Loan Forecasts</a>, latest cohort average), deflated by <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/czbh/mm23">RPI</a> for earlier cohorts.</li>
+          <li>Simulate year-by-year from graduation: interest accrues on the balance and repayments are deducted.</li>
+          <li>Uses actual <a href="https://www.gov.uk/guidance/how-interest-is-calculated-plan-2">historical March RPI values</a>, including the government caps applied in 2022&ndash;23.</li>
+        </ul>
+      </li>
+      <li><strong>Run microsimulation</strong> with balance-tracking variables to project interest accrual under both regimes.</li>
+      <li><strong>Compare interest accrual:</strong> baseline (RPI + 0&ndash;3% margin) vs reformed (RPI only).</li>
+      <li><strong>Fiscal cost</strong> = lost interest income on the loan book &mdash; the margin that no longer accrues, reducing the government&rsquo;s loan asset value.</li>
+    </ol>
+  </details>
+</div>
+
+<script>
+(function() {
+  const data = {"cancel_threshold_freeze":{"annual_impacts":[{"year":2026,"impact_bn":0.0},{"year":2027,"impact_bn":-0.298},{"year":2028,"impact_bn":-0.583},{"year":2029,"impact_bn":-0.876},{"year":2030,"impact_bn":-0.858}]},"cap_interest_at_rpi":{"annual_impacts":[{"year":2026,"interest_income_impact_bn":-1.837},{"year":2027,"interest_income_impact_bn":-1.907},{"year":2028,"interest_income_impact_bn":-1.99},{"year":2029,"interest_income_impact_bn":-2.048},{"year":2030,"interest_income_impact_bn":-1.88}]}};
+
+  const freezeImpacts = data.cancel_threshold_freeze.annual_impacts;
+  const capImpacts = data.cap_interest_at_rpi.annual_impacts;
+
+  const tbody = document.getElementById('budget-tbody');
+  const fmt = v => v.toFixed(1);
+
+  let totalFreeze = 0;
+  let totalCap = 0;
+
+  for (let i = 0; i < freezeImpacts.length; i++) {
+    const freezeVal = freezeImpacts[i].impact_bn;
+    const capVal = capImpacts[i].interest_income_impact_bn;
+
+    totalFreeze += freezeVal;
+    totalCap += capVal;
+
+    const tr = document.createElement('tr');
+    const freezeCell = freezeVal === 0.0
+      ? `<td class="val-freeze">0.0 *</td>`
+      : `<td class="val-freeze">${fmt(Math.abs(freezeVal))}</td>`;
+    const yr = freezeImpacts[i].year;
+    const fiscalYear = `${yr}-${String(yr + 1).slice(2)}`;
+    tr.innerHTML =
+      `<td class="col-year">${fiscalYear}</td>` +
+      freezeCell +
+      `<td class="val-cap">${fmt(Math.abs(capVal))}</td>`;
+    tbody.appendChild(tr);
+  }
+
+})();
+</script>
+</body>
+</html>

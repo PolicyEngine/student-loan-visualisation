@@ -1,0 +1,79 @@
+{
+  "cancel_threshold_freeze": {
+    "description": "Cancelling the Plan 2 student loan repayment threshold freeze. Baseline is current law (threshold frozen at \u00a329,385 for 2027-2029). Reform uprates the threshold with RPI each year.",
+    "methodology": "PolicyEngine UK microsimulation",
+    "annual_impacts": [
+      {
+        "year": 2026,
+        "impact_bn": 0.0,
+        "baseline_total_bn": 7.385,
+        "reformed_total_bn": 7.385
+      },
+      {
+        "year": 2027,
+        "impact_bn": -0.298,
+        "baseline_total_bn": 7.674,
+        "reformed_total_bn": 7.377
+      },
+      {
+        "year": 2028,
+        "impact_bn": -0.583,
+        "baseline_total_bn": 8.083,
+        "reformed_total_bn": 7.5
+      },
+      {
+        "year": 2029,
+        "impact_bn": -0.876,
+        "baseline_total_bn": 8.609,
+        "reformed_total_bn": 7.733
+      },
+      {
+        "year": 2030,
+        "impact_bn": -0.858,
+        "baseline_total_bn": 8.932,
+        "reformed_total_bn": 8.075
+      }
+    ]
+  },
+  "cap_interest_at_rpi": {
+    "description": "Capping Plan 2 student loan interest at RPI (removing the 0-3% margin above RPI). Fiscal cost = lost interest income on the student loan book. Interest accrual increases the government's loan asset value; capping at RPI wipes out the margin.",
+    "methodology": "PolicyEngine UK microsimulation with balance tracking (cohort-specific initial balance: \u00a345.6k for 2025 grads, deflated by RPI for earlier cohorts)",
+    "annual_impacts": [
+      {
+        "year": 2026,
+        "interest_income_impact_bn": -1.837,
+        "repayment_impact_bn": -0.008,
+        "baseline_interest_bn": 7.686,
+        "reformed_interest_bn": 5.849
+      },
+      {
+        "year": 2027,
+        "interest_income_impact_bn": -1.907,
+        "repayment_impact_bn": -0.011,
+        "baseline_interest_bn": 6.888,
+        "reformed_interest_bn": 4.981
+      },
+      {
+        "year": 2028,
+        "interest_income_impact_bn": -1.99,
+        "repayment_impact_bn": -0.008,
+        "baseline_interest_bn": 6.576,
+        "reformed_interest_bn": 4.586
+      },
+      {
+        "year": 2029,
+        "interest_income_impact_bn": -2.048,
+        "repayment_impact_bn": -0.069,
+        "baseline_interest_bn": 6.702,
+        "reformed_interest_bn": 4.654
+      },
+      {
+        "year": 2030,
+        "interest_income_impact_bn": -1.88,
+        "repayment_impact_bn": -0.34,
+        "baseline_interest_bn": 5.574,
+        "reformed_interest_bn": 3.694
+      }
+    ]
+  }
+}
