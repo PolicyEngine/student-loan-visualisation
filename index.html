@@ -52,62 +52,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  .pe-site-header {
-    border-bottom: 1px solid var(--border-light);
-    background: rgba(255, 255, 255, 0.98);
-  }
-
-  .pe-site-header-inner {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-  }
-
-  .pe-brand {
-    color: var(--gray-900);
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .pe-brand::before {
-    content: "";
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 10px;
-    border-radius: 2px;
-    background: var(--teal-500);
-  }
-
-  .pe-site-nav {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    font-size: 14px;
-    font-weight: 500;
-  }
-
-  .pe-site-nav a {
-    color: var(--gray-700);
-    text-decoration: none;
-  }
-
-  .pe-site-nav a:hover {
-    color: var(--teal-700);
-    text-decoration: none;
-  }
-
-  .pe-country-link {
-    color: var(--teal-700) !important;
-    font-weight: 600;
-  }
 
   .container {
     max-width: 960px;
@@ -490,19 +434,6 @@
 
   /* Mobile */
   @media (max-width: 768px) {
-    .pe-site-header-inner {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .pe-site-nav {
-      gap: 14px;
-      overflow-x: auto;
-      width: 100%;
-      padding-bottom: 2px;
-    }
-
     h1 { font-size: 26px; }
     .subtitle { font-size: 16px; }
     .chart-grid { grid-template-columns: 1fr; }
@@ -511,19 +442,6 @@
 </head>
 <body>
 
-<header class="pe-site-header">
-  <div class="pe-site-header-inner">
-    <a class="pe-brand" href="https://policyengine.org/uk" aria-label="PolicyEngine UK home">PolicyEngine</a>
-    <nav class="pe-site-nav" aria-label="PolicyEngine">
-      <a href="https://policyengine.org/uk/research">Research</a>
-      <a href="https://policyengine.org/uk/model">Model</a>
-      <a href="https://policyengine.org/uk/api">API</a>
-      <a href="https://policyengine.org/uk/team">About</a>
-      <a href="https://policyengine.org/uk/donate">Donate</a>
-      <a class="pe-country-link" href="https://policyengine.org/us">US</a>
-    </nav>
-  </div>
-</header>
 
 <div class="container">
   <div class="hero">
