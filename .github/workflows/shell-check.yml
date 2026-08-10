@@ -1,0 +1,19 @@
+name: Site-shell check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  shell-check:
+    name: Page carries the PolicyEngine site shell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assert the PolicyEngine site shell is in index.html
+        run: |
+          for needle in "PolicyEngine" ">Research<" ">Model<" ">API<" ">Donate<" "About us" "Developer tools" "Privacy policy" "Terms and conditions"; do
+            grep -qF -- "$needle" index.html || { echo "MISSING from index.html: $needle"; exit 1; }
+          done
+          echo "Site shell present (brand, nav labels, footer links)."
