@@ -2,7 +2,7 @@
 
 Interactive visualisation comparing the distributional impact of two proposed UK student loan reforms across the income distribution.
 
-**Live site:** https://student-loan-visualisation.vercel.app
+**Live site:** https://policyengine.org/uk/student-loan-visualisation
 
 ## Reforms modelled
 
